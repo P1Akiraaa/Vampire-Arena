@@ -2,23 +2,10 @@
 #include "CoreMinimal.h"
 #include "Actor.h"
 #include "ShapeObject.h"
-#include "TextObject.h"
 
 class Level
 {
 	string title;
-	string description;
-	vector<ShapeObject*> shapes;
-
-public:
-	Level() = default;
-	Level(const string& _title, const vector<ShapeObject*>& _shapes, const string& _description);
-	~Level();
-
-public:
-	void BeginPlay();
-	void Stop();
-
 
 public:
 	template <typename T = Actor>

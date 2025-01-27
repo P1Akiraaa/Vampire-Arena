@@ -2,12 +2,12 @@
 #include "ActorManager.h"
 #include "CameraManager.h"
 #include "TimerManager.h"
+#include"CombatLevel.h"
 
 Game::Game()
 {
 	window = RenderWindow();
 }
-
 
 void Game::Start()
 {
@@ -18,6 +18,9 @@ bool Game::Update()
 {
     TM_Seconds& _timer = M_TIMER;
     _timer.Update();
+
+    CombatLevel _combat = CombatLevel();
+    _combat.Launch();
 
     while (const optional _event = window.pollEvent())
     {
