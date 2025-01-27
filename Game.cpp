@@ -3,6 +3,8 @@
 #include "CameraManager.h"
 #include "TimerManager.h"
 
+#include "MeshActor.h"
+
 Game::Game()
 {
 	window = RenderWindow();
@@ -11,7 +13,9 @@ Game::Game()
 
 void Game::Start()
 {
-    window.create(VideoMode({ 1200, 800 }), "SFML works!");
+    window.create(VideoMode({ 1270, 720 }), "Vampire Arena");
+
+    Level::SpawnActor(MeshActor(RectangleShapeData(CAST(Vector2f, window.getSize()), "Background", PNG)));
 };
 
 bool Game::Update()
