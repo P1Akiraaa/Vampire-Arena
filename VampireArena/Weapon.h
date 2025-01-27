@@ -12,13 +12,12 @@ public:
 	{
 		return reach;
 	}
-	FORCEINLINE int GetAttackValue() const
+	FORCEINLINE double GetAttackValue() const
 	{
-		return attackValue;
+		return ((equipableStat * weight) * (1 + (static_cast<int>(rarity) * 0.1)) * 0.9);
 	}
 	FORCEINLINE int GetAttackSpeed() const
 	{
 		return attackSpeed;
 	}
 };
-

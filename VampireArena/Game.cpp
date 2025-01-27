@@ -20,7 +20,7 @@ bool Game::Update()
     _timer.Update();
 
     CombatLevel _combat = CombatLevel();
-    _combat.Launch();
+    //_combat.Launch();
 
     while (const optional _event = window.pollEvent())
     {

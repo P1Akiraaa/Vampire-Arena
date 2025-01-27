@@ -17,6 +17,10 @@ public:
 			goldToDrop = _gold;
 		}
 	}
+	FORCEINLINE int GetGoldToDrop() const
+	{
+		return goldToDrop;
+	}
 
 public:
 	Enemy(const RectangleShapeData& _data, const string& _name = "Character");

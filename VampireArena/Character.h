@@ -2,6 +2,7 @@
 #include "MeshActor.h"
 #include "Weapon.h"
 #include "Relic.h"
+#include "Armor.h"
 #include "AttackSkill.h"
 
 class Character : public MeshActor
@@ -10,18 +11,48 @@ class Character : public MeshActor
 	int life;
 	int lifeMax;
 	int speed;
-	Weapon* weapon;
-	Relic* relic;
 	bool isFrenzied;
+	Weapon* weapon;
+	Armor* armor;
+	Relic* relic;
 	AttackSkill* attackSkill;
 	//int fame; //LATER
 
 public:
-	Character(const RectangleShapeData& _data, const string& _name = "Character");
+	FORCEINLINE string GetName() const
+	{
+		return name;
+	}
+	FORCEINLINE int GetLife() const
+	{
+		return life;
+	}
+	FORCEINLINE int GetSpeed() const
+	{
+		return speed;
+	}
+	FORCEINLINE bool GetIsFrenzied() const
+	{
+		return isFrenzied;
+	}
+	FORCEINLINE Weapon* GetWeapon() const
+	{
+		return weapon;
+	}
+	FORCEINLINE Armor* GetArmor() const
+	{
+		return armor;
+	}
+	FORCEINLINE Relic* GetRelic() const
+	{
+		return relic;
+	}
 
+public:
+	Character() = default;
+	Character(const RectangleShapeData& _data, const string& _name = "Character");
+	virtual ~Character() = default;
 public:
 	virtual void Attack(const int _amount);
 	virtual void Defend();
-
 };
-
