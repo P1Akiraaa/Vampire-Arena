@@ -3,7 +3,6 @@
 
 class Armor : public Equipable
 {
-	int weight;
 	int resistance;
 
 public:
@@ -13,10 +12,9 @@ public:
 	}
 	FORCEINLINE int GetWeight() const
 	{
-		return weight;
+		return ((equipableStat / 2) * weight) * (static_cast<int>(rarity) * 0.1);
 	}
 
 public:
 	Armor() = default;
 };
-

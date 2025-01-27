@@ -17,4 +17,3 @@ public:
 public:
 	void Effect() {}; //TODO
 };
-

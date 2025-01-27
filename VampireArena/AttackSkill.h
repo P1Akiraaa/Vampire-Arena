@@ -7,6 +7,22 @@ class AttackSkill
 	string description;
 
 public:
-	AttackSkill(const string& _name, const string& _description);
-};
+	FORCEINLINE string GetName() const
+	{
+		return name;
+	}
+	FORCEINLINE string GetDescription() const
+	{
+		return description;
+	}
 
+public:
+	AttackSkill() = default;
+	AttackSkill(const string& _name, const string& _description);
+
+private:
+	void ApplySkillEffect()
+	{
+		//TODO
+	}
+};
