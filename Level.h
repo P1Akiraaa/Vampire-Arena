@@ -28,6 +28,9 @@ public:
 		return _actor;
 	}
 
+public:
+	Level() = default;
+
 
 	// TODO move to PlayerController
 	//static void SetViewTarget()
