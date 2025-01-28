@@ -12,6 +12,10 @@ UI::Widget::Widget(const string& _name, const RenderType& _type) : Actor(_name)
 	zOrder = 0; // pas de constructeur surchargé pour le z Order pour un problème de construct
 }
 
+UI::Widget::~Widget()
+{
+}
+
 void UI::Widget::Construct()
 {
 	const RenderData& _data = RenderData(bind(&Widget::Render, this, _1), type);

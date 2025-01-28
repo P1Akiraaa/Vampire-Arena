@@ -115,6 +115,18 @@
     <Filter Include="Scripts\Core\Actors\Widget">
       <UniqueIdentifier>{4ec69e9f-4f8a-4f6d-8a45-83e7430166fa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scripts\Managers\Input">
+      <UniqueIdentifier>{a3320d89-806a-47e1-8f9b-42732fac30ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Managers\Game">
+      <UniqueIdentifier>{6972bc4c-49cd-4b13-96e4-3f4134858771}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Resource Files\Enum">
+      <UniqueIdentifier>{6f4b41e1-bedf-48e6-b54b-9ca9a1e8db76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Managers\HUD">
+      <UniqueIdentifier>{5d4c76eb-55ce-4943-ae13-e1b2876d29c1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TextObject.cpp">
@@ -225,9 +237,6 @@
     <ClCompile Include="Equipable.cpp">
       <Filter>VampireSurvivor</Filter>
     </ClCompile>
-    <ClCompile Include="GameManager.cpp">
-      <Filter>VampireSurvivor</Filter>
-    </ClCompile>
     <ClCompile Include="Item.cpp">
       <Filter>VampireSurvivor</Filter>
     </ClCompile>
@@ -249,17 +258,20 @@
     <ClCompile Include="CameraActor.cpp">
       <Filter>Scripts\Core\Actors\Camera</Filter>
     </ClCompile>
-    <ClCompile Include="Widget.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>Scripts\Managers\Game</Filter>
     </ClCompile>
-    <ClCompile Include="RenderType.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HUD.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Scripts\Managers\Input</Filter>
     </ClCompile>
     <ClCompile Include="VampireArena.cpp">
       <Filter>VampireSurvivor</Filter>
+    </ClCompile>
+    <ClCompile Include="Widget.cpp">
+      <Filter>Scripts\Core\Actors\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="HUD.cpp">
+      <Filter>Scripts\Managers\HUD</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -398,9 +410,6 @@
     <ClInclude Include="Equipable.h">
       <Filter>VampireSurvivor</Filter>
     </ClInclude>
-    <ClInclude Include="GameManager.h">
-      <Filter>VampireSurvivor</Filter>
-    </ClInclude>
     <ClInclude Include="Item.h">
       <Filter>VampireSurvivor</Filter>
     </ClInclude>
@@ -419,17 +428,23 @@
     <ClInclude Include="CameraActor.h">
       <Filter>Scripts\Core\Actors\Camera</Filter>
     </ClInclude>
-    <ClInclude Include="Widget.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="GameManager.h">
+      <Filter>Scripts\Managers\Game</Filter>
     </ClInclude>
-    <ClInclude Include="RenderType.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HUD.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="InputManager.h">
+      <Filter>Scripts\Managers\Input</Filter>
     </ClInclude>
     <ClInclude Include="VampireArena.h">
       <Filter>VampireSurvivor</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderType.h">
+      <Filter>Scripts\Resource Files\Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="Widget.h">
+      <Filter>Scripts\Core\Actors\Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="HUD.h">
+      <Filter>Scripts\Managers\HUD</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

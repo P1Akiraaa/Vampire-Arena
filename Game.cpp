@@ -22,7 +22,6 @@ bool Game::Update()
     TM_Seconds& _timer = M_TIMER;
     _timer.Update();
 
-    // TODO enlever pour le inputManager
     while (const optional _event = window.pollEvent())
     {
         if (_event->is<Event::Closed>())

@@ -15,7 +15,6 @@ namespace UI
 
 	};
 
-
 	class Widget : public Actor
 	{
 		RenderType type;
@@ -43,6 +42,10 @@ namespace UI
 
 	public:
 		Widget(const string& _name, const RenderType& _type = Screen);
+		virtual ~Widget();
+
+	public:
+
 
 		virtual void Construct() override;
 		virtual void Deconstruct() override;
