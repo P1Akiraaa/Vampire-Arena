@@ -1,12 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Actor.h"
-#include "ShapeObject.h"
 
 class Level
 {
-	string title;
-
 public:
 	template <typename T = Actor>
 	static T* SpawnActor()
@@ -30,4 +27,8 @@ public:
 		_actor->Construct();
 		return _actor;
 	}
+
+
+	// TODO move to PlayerController
+	//static void SetViewTarget()
 };

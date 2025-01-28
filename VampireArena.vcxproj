@@ -162,6 +162,7 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="HUD.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Label.cpp" />
     <ClCompile Include="Logger.cpp" />
@@ -173,6 +174,7 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RectangleActor.cpp" />
     <ClCompile Include="Relic.cpp" />
+    <ClCompile Include="RenderType.cpp" />
     <ClCompile Include="RootComponent.cpp" />
     <ClCompile Include="Sample.cpp" />
     <ClCompile Include="ShapeObject.cpp" />
@@ -183,7 +185,9 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="TriangleActor.cpp" />
     <ClCompile Include="Utilities.cpp" />
+    <ClCompile Include="VampireArena.cpp" />
     <ClCompile Include="Weapon.cpp" />
+    <ClCompile Include="Widget.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
@@ -209,12 +213,14 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClInclude Include="FontManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="HUD.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Label.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="MusicSample.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Relic.h" />
+    <ClInclude Include="RenderType.h" />
     <ClInclude Include="Sample.h" />
     <ClInclude Include="SubclassOf.h" />
     <ClInclude Include="TransformableViewer.h" />
@@ -237,7 +243,9 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClInclude Include="TransformData.h" />
     <ClInclude Include="TriangleActor.h" />
     <ClInclude Include="Utilities.h" />
+    <ClInclude Include="VampireArena.h" />
     <ClInclude Include="Weapon.h" />
+    <ClInclude Include="Widget.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="TODOLIST.txt" />

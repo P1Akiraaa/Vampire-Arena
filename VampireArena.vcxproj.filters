@@ -100,6 +100,21 @@
     <Filter Include="Scripts\Managers\Audio\Samples\Music">
       <UniqueIdentifier>{85485f9e-767e-4a95-833d-840f8602da7d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="VampireSurvivor">
+      <UniqueIdentifier>{f6c53fd8-7101-41dc-90f2-182177950523}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Managers\Camera">
+      <UniqueIdentifier>{5634c55b-aff4-424f-9552-af0ef347bc70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Core\Components\Camera">
+      <UniqueIdentifier>{73f03a5a-55e9-416c-9e55-196e0438d59c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Core\Actors\Camera">
+      <UniqueIdentifier>{6e068566-8f66-4de8-a409-2be6b50c2823}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Core\Actors\Widget">
+      <UniqueIdentifier>{4ec69e9f-4f8a-4f6d-8a45-83e7430166fa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TextObject.cpp">
@@ -128,9 +143,6 @@
     </ClCompile>
     <ClCompile Include="ActorManager.cpp">
       <Filter>Scripts\Managers\Actor</Filter>
-    </ClCompile>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Logger.cpp">
       <Filter>Scripts\Resource Files\Logger</Filter>
@@ -192,47 +204,62 @@
     <ClCompile Include="TriangleActor.cpp">
       <Filter>Scripts\Core\Actors\Shapes\Primitives</Filter>
     </ClCompile>
-    <ClCompile Include="CameraComponent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CameraActor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GameManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CameraManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Character.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AttackSkill.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Item.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Relic.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Equipable.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>VampireSurvivor</Filter>
     </ClCompile>
     <ClCompile Include="Armor.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>VampireSurvivor</Filter>
     </ClCompile>
-    <ClCompile Include="Weapon.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="AttackSkill.cpp">
+      <Filter>VampireSurvivor</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>VampireSurvivor</Filter>
     </ClCompile>
     <ClCompile Include="CombatLevel.cpp">
+      <Filter>VampireSurvivor</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>VampireSurvivor</Filter>
+    </ClCompile>
+    <ClCompile Include="Equipable.cpp">
+      <Filter>VampireSurvivor</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>VampireSurvivor</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>VampireSurvivor</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>VampireSurvivor</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>VampireSurvivor</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>VampireSurvivor</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraManager.cpp">
+      <Filter>Scripts\Managers\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraComponent.cpp">
+      <Filter>Scripts\Core\Components\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraActor.cpp">
+      <Filter>Scripts\Core\Actors\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Widget.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HUD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VampireArena.cpp">
+      <Filter>VampireSurvivor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -350,47 +377,59 @@
     <ClInclude Include="SubclassOf.h">
       <Filter>Scripts\Resource Files</Filter>
     </ClInclude>
-    <ClInclude Include="CameraComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CameraActor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CameraManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Character.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AttackSkill.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Item.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Relic.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Equipable.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Weapon.h">
+      <Filter>VampireSurvivor</Filter>
     </ClInclude>
     <ClInclude Include="Armor.h">
-      <Filter>Header Files</Filter>
+      <Filter>VampireSurvivor</Filter>
     </ClInclude>
-    <ClInclude Include="Weapon.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="AttackSkill.h">
+      <Filter>VampireSurvivor</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>VampireSurvivor</Filter>
     </ClInclude>
     <ClInclude Include="CombatLevel.h">
+      <Filter>VampireSurvivor</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>VampireSurvivor</Filter>
+    </ClInclude>
+    <ClInclude Include="Equipable.h">
+      <Filter>VampireSurvivor</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>VampireSurvivor</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>VampireSurvivor</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>VampireSurvivor</Filter>
+    </ClInclude>
+    <ClInclude Include="Relic.h">
+      <Filter>VampireSurvivor</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraManager.h">
+      <Filter>Scripts\Managers\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraComponent.h">
+      <Filter>Scripts\Core\Components\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraActor.h">
+      <Filter>Scripts\Core\Actors\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Widget.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HUD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VampireArena.h">
+      <Filter>VampireSurvivor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
