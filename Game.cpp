@@ -13,8 +13,10 @@ Game::Game()
 
 void Game::Start()
 {
-    window.create(VideoMode({ 1200, 800 }), "Vampire Arena");
-    M_CAMERA.CreateCamera(Vector2f(), Vector2f(1920.0f, 1080.0f), "Widget");
+    window.create(VideoMode({ 1920, 1080 }), "Vampire Arena");
+    M_CAMERA.CreateCamera(Vector2f(960.0f, 540.0f), Vector2f(1920.0f, 1080.0f), "Widget");
+    MeshActor _mesh = MeshActor(RectangleShapeData(Vector2f(1920.0f, 1080.0f), "Default"));
+    Level::SpawnActor(_mesh);
 };
 
 bool Game::Update()

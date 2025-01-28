@@ -1,6 +1,4 @@
-Architecture des widgets
-InputManager -> Fait
-Mettre à jour l'UML
+Mettre à jour l'UML -> avec archi Widget
 
 Differents levels 
 	-> MainMenu (Définir le MainMenu comme étant la première fenêtre qui s'ouvre)
