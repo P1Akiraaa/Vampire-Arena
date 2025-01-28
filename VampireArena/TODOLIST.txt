@@ -1,0 +1,36 @@
+Architecture des widgets
+Mettre à jour l'UML
+InputManager -> Fait
+
+Differents levels 
+	-> MainMenu (Définir le MainMenu comme étant la première fenêtre qui s'ouvre)
+	-> CombatMenu
+
+Systeme de combat:
+	-> Les entités peuvent s'infliger des dégâts
+	-> Le programme reconnait une défaite quand le joueur n'a plus de vie
+	-> Le programme reconnait uen victoire quand l'ennemi n'a plus de vie
+	-> Texte défilant résumant les actions en cours
+
+Spawn/Génération d'ennemis aléatoire:
+	-> Selection aléatoire d'item parmis ceux existant
+	-> Système de modificateur pour augmenter la difficulté (rareté des items drop, + de vie, + de résistance)
+
+Taux de drop des items
+
+Assets pour characters:
+	-> Ennemi full/mid/low life
+	-> Player full/mid/low life
+
+Assets sounds/musics:
+	-> Musique d'ambiance
+	-> Sons d'attaque (en combat)
+	-> Son de victoire
+	-> Son de défaite
+	-> Son de boutton cliqué
+
+Assets fonts
+
+Level Forge
+Level Saboteur
+Ranger les fichiers dans le projet
