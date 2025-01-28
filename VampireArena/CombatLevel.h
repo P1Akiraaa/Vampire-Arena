@@ -3,12 +3,14 @@
 #include "Player.h"
 #include "Enemy.h"
 
-class CombatLevel
+class CombatLevel : public Level
 {
 	Player* player;
 	Enemy* enemy;
 
 public:
 	CombatLevel() = default;
-};
 
+public:
+	void Open();
+};

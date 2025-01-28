@@ -100,6 +100,33 @@
     <Filter Include="Scripts\Managers\Audio\Samples\Music">
       <UniqueIdentifier>{85485f9e-767e-4a95-833d-840f8602da7d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scripts\Managers\Input">
+      <UniqueIdentifier>{4c52e723-a53f-4284-bc58-75fd677764c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Characters">
+      <UniqueIdentifier>{98ef6c17-c17d-46a8-bfe4-29a9e5b25ea0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Item">
+      <UniqueIdentifier>{17bf76e5-caa7-4601-9855-32ffc1a04c6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Item\Equipable">
+      <UniqueIdentifier>{1873c386-e7f0-48f0-a9e7-c8f00c7deed0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Item\Equipable\Weapon">
+      <UniqueIdentifier>{e5a09371-749e-4b6e-86dd-8ee7c70a17f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Item\Equipable\Armor">
+      <UniqueIdentifier>{5ce48b57-fae8-4bbb-b8c3-be7ea7ee0896}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Item\Relic">
+      <UniqueIdentifier>{2bef48a6-6fee-43fb-89f7-551c4e05abb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Characters\Player">
+      <UniqueIdentifier>{368e395e-86e1-43a0-abad-918b0d21426b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Characters\Enemy">
+      <UniqueIdentifier>{141d67c4-0ded-4a0a-aeb7-fe89512730e7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TextObject.cpp">
@@ -204,35 +231,38 @@
     <ClCompile Include="CameraManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Character.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AttackSkill.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Item.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Relic.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Equipable.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Armor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Weapon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CombatLevel.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Scripts\Managers\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Armor.cpp">
+      <Filter>Scripts\Item\Equipable\Armor</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Scripts\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Scripts\Characters\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Equipable.cpp">
+      <Filter>Scripts\Item\Equipable</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Scripts\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Scripts\Characters\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Relic.cpp">
+      <Filter>Scripts\Item\Relic</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>Scripts\Item\Equipable\Weapon</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -362,35 +392,38 @@
     <ClInclude Include="CameraManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Character.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="AttackSkill.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Item.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Relic.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Equipable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Armor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Weapon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CombatLevel.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Scripts\Managers\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Armor.h">
+      <Filter>Scripts\Item\Equipable\Armor</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Scripts\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Scripts\Characters\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Equipable.h">
+      <Filter>Scripts\Item\Equipable</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Scripts\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Scripts\Characters\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Relic.h">
+      <Filter>Scripts\Item\Relic</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>Scripts\Item\Equipable\Weapon</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
