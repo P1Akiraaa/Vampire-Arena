@@ -4,6 +4,8 @@
 #include "TimerManager.h"
 #include"CombatLevel.h"
 
+using namespace Camera;
+
 Game::Game()
 {
 	window = RenderWindow();
@@ -11,16 +13,14 @@ Game::Game()
 
 void Game::Start()
 {
-    window.create(VideoMode({ 1200, 800 }), "SFML works!");
+    window.create(VideoMode({ 1200, 800 }), "Vampire Arena");
+    M_CAMERA.CreateCamera(Vector2f(), Vector2f(1920.0f, 1080.0f), "Widget");
 };
 
 bool Game::Update()
 {
     TM_Seconds& _timer = M_TIMER;
     _timer.Update();
-
-    CombatLevel _combat = CombatLevel();
-    //_combat.Launch();
 
     while (const optional _event = window.pollEvent())
     {

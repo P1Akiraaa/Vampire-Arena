@@ -18,7 +18,7 @@ protected:
 
 public:
 
-	inline bool GetIsSaboted() const
+	FORCEINLINE bool GetIsSaboted() const
 	{
 		return isSaboted;
 	}

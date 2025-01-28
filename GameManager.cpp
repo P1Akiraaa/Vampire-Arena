@@ -5,7 +5,6 @@ GameManager::~GameManager()
 	delete currentGame;
 }
 
-
 void GameManager::Launch(Game* _currentGame)
 {
 	if (!(currentGame = _currentGame)) return;

@@ -1,4 +1,4 @@
-#include "Game.h"
+#include "VampireArena.h"
 #include "GameManager.h"
 
 void InitConfig()
@@ -10,8 +10,7 @@ void InitConfig()
 int main()
 {
     InitConfig();
-    Game* _game = new Game();
-    M_GAME.Launch(_game);
+    M_GAME.Launch(new VampireArena());
 
 	return EXIT_SUCCESS;
 }
