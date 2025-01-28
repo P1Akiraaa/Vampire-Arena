@@ -12,6 +12,10 @@ public:
 		return !window.isOpen();
 	}
 
+	FORCEINLINE RenderWindow& GetRenderWindow()
+	{
+		return window;
+	}
 public:
 	Game();
 	virtual ~Game() {};

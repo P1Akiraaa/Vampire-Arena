@@ -273,6 +273,9 @@
     <ClCompile Include="HUD.cpp">
       <Filter>Scripts\Managers\HUD</Filter>
     </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Singleton.h">
@@ -445,6 +448,9 @@
     </ClInclude>
     <ClInclude Include="HUD.h">
       <Filter>Scripts\Managers\HUD</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
