@@ -12,7 +12,7 @@ enum EquipmentType
 
 enum RarityType
 {
-	RT_JUNK,
+	RT_JUNK = 1,
 	RT_COMMON,
 	RT_UNCOMMON,
 	RT_RARE,
@@ -33,19 +33,19 @@ protected:
 	RarityType rarity;
 
 public:
-	inline string GetName() const
+	FORCEINLINE string GetName() const
 	{
 		return name;
 	}
-	inline string GetDescription() const
+	FORCEINLINE string GetDescription() const
 	{
 		return description;
 	}
-	inline int GetUpgradePrice() const
+	FORCEINLINE int GetUpgradePrice() const
 	{
 		return upgradePrice * rarity;
 	}
-	inline int GetRarity() const
+	FORCEINLINE int GetRarity() const
 	{
 		return rarity;
 	}

@@ -23,10 +23,9 @@ public:
 	}
 
 public:
-	Enemy(const RectangleShapeData& _data, const string& _name = "Character");
+	Enemy(const RectangleShapeData& _data, const string& _name = "Enemy");
 
 public:
 	virtual void Attack(const int _amount) override;
 	virtual void Defend() override;
 };
-

@@ -1,0 +1,13 @@
+Architecture des widgets
+Mettre à jour l'UML
+InputManager
+
+Differents levels 
+	-> MainMenu
+	-> CombatMenu
+Systeme de combat
+Spawn/Génération d'ennemis aléatoire
+Taux de drop des items
+Assets pour characters, sounds/musics et fonts
+Level Forge
+Level Saboteur
