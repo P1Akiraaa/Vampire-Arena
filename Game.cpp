@@ -15,14 +15,49 @@ void Game::Start()
 {
     window.create(VideoMode({ 1920, 1080 }), "Vampire Arena");
     M_CAMERA.CreateCamera(Vector2f(960.0f, 540.0f), Vector2f(1920.0f, 1080.0f), "Widget");
-    MeshActor* _bigShape = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(900.0f, 800.0f), "Default")));
-    MeshActor* _littleShape = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(120.0f, 100.0f), "Floor")));
-    MeshActor* _littleShape2 = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(120.0f, 100.0f), "Floor")));
-    MeshActor* _littleShape3 = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(120.0f, 100.0f), "Floor")));
-    _bigShape->SetPosition(Vector2f(800.0f, 105.0f));
-    _littleShape->SetPosition(Vector2f(1215.0f, 140.0f));
-    _littleShape2->SetPosition(Vector2f(1375.0f, 140.0f));
-    _littleShape3->SetPosition(Vector2f(1535.0f, 140.0f));
+    MeshActor* _backGround = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(1920.0f, 1080.0f), "background", JPG)));
+    // TODO remove
+    const float _sideStartX = 100.0f;
+    float _sideStartY = 105.0f;
+    const Vector2f& _sideSize = Vector2f(550.0f, 180.0f);
+    const float _sideSpacing = 800/3 - _sideSize.y;
+    for (u_int _index = 0; _index < 3; _index++)
+    {
+        MeshActor* _sideButton = Level::SpawnActor(MeshActor(RectangleShapeData(_sideSize, "Default")));
+        _sideButton->SetPosition(Vector2f(_sideStartX, _sideStartY));
+        _sideStartY += _sideSize.y + _sideSpacing;
+    }
+
+    MeshActor* _mainBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(1000.0f, 800.0f), "Borders", JPG)));
+    float _itemStartX = 1315.0f;
+    const float _itemStartY = 200.0f;
+    const Vector2f& _itemSize = Vector2f(120.0f, 100.0f);
+    const float _itemSpacing = 440.0f / 3.0f - _itemSize.x;
+    for (u_int _index = 0; _index < 3; _index++)
+    {
+        MeshActor* _itemBox = Level::SpawnActor(MeshActor(RectangleShapeData(_itemSize, "Floor")));
+        _itemBox->SetPosition(Vector2f(_itemStartX, _itemStartY));
+        _itemStartX += _itemSize.x + _itemSpacing;
+    }
+    
+
+    MeshActor* _descriptionBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(440.0f, 400.0f), "Paddle")));
+    MeshActor* _charaBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(250.0f, 240.0f), "Floor")));
+    MeshActor* _playerLifeBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(250.0f, 50.0f), "Paddle")));
+    MeshActor* _skillDescriptionBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(250.0f, 240.0f), "Floor")));
+    MeshActor* _skillBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(150.0f, 100.0f), "Paddle")));
+    MeshActor* _fameBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(200.0f, 100.0f), "Paddle")));
+    MeshActor* _goldBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(200.0f, 100.0f), "Paddle")));
+
+    _mainBox->SetPosition(Vector2f(800.0f, 105.0f));
+
+    _descriptionBox->SetPosition(Vector2f(1315.0f, 300.0f));
+    _charaBox->SetPosition(Vector2f(918.0f, 200.0f));
+    _playerLifeBox->SetPosition(Vector2f(918.0f, 440.0f));
+    _skillDescriptionBox->SetPosition(Vector2f(918.0f, 567.0f));
+    _skillBox->SetPosition(Vector2f(918.0f, 567.0f));
+    _fameBox->SetPosition(Vector2f(1315.0f, 720.0f));
+    _goldBox->SetPosition(Vector2f(1555.0f, 720.0f));
 };
 
 bool Game::Update()
