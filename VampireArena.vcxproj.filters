@@ -231,19 +231,10 @@
     <ClCompile Include="CombatLevel.cpp">
       <Filter>VampireSurvivor</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>VampireSurvivor</Filter>
-    </ClCompile>
-    <ClCompile Include="Equipable.cpp">
-      <Filter>VampireSurvivor</Filter>
-    </ClCompile>
     <ClCompile Include="Item.cpp">
       <Filter>VampireSurvivor</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
-      <Filter>VampireSurvivor</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
       <Filter>VampireSurvivor</Filter>
     </ClCompile>
     <ClCompile Include="Weapon.cpp">
@@ -272,6 +263,9 @@
     </ClCompile>
     <ClCompile Include="HUD.cpp">
       <Filter>Scripts\Managers\HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="Equippable.cpp">
+      <Filter>VampireSurvivor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -404,16 +398,7 @@
     <ClInclude Include="CombatLevel.h">
       <Filter>VampireSurvivor</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>VampireSurvivor</Filter>
-    </ClInclude>
-    <ClInclude Include="Equipable.h">
-      <Filter>VampireSurvivor</Filter>
-    </ClInclude>
     <ClInclude Include="Item.h">
-      <Filter>VampireSurvivor</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
       <Filter>VampireSurvivor</Filter>
     </ClInclude>
     <ClInclude Include="Relic.h">
@@ -445,6 +430,9 @@
     </ClInclude>
     <ClInclude Include="HUD.h">
       <Filter>Scripts\Managers\HUD</Filter>
+    </ClInclude>
+    <ClInclude Include="Equippable.h">
+      <Filter>VampireSurvivor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

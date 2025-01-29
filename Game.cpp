@@ -29,10 +29,10 @@ void Game::Start()
     }
 
     MeshActor* _mainBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(1000.0f, 800.0f), "Borders", JPG)));
-    float _itemStartX = 1315.0f;
+    float _itemStartX = 1274.0f; 
     const float _itemStartY = 200.0f;
     const Vector2f& _itemSize = Vector2f(120.0f, 100.0f);
-    const float _itemSpacing = 440.0f / 3.0f - _itemSize.x;
+    const float _itemSpacing = (400.0f - _itemSize.x * 3) / 2.0f;
     for (u_int _index = 0; _index < 3; _index++)
     {
         MeshActor* _itemBox = Level::SpawnActor(MeshActor(RectangleShapeData(_itemSize, "Floor")));
@@ -40,24 +40,30 @@ void Game::Start()
         _itemStartX += _itemSize.x + _itemSpacing;
     }
     
+    float _laterStartX = 1274.0f;
+    const float _laterStartY = 707.0f;
+    const Vector2f& _laterSize = Vector2f(180.0f, 100.0f);
+    const float _laterSpacing = (400.0f - _laterSize.x * 2);
+    for (u_int _index = 0; _index < 2; _index++)
+    {
+        MeshActor* _laterBox = Level::SpawnActor(MeshActor(RectangleShapeData(_laterSize, "Paddle")));
+        _laterBox->SetPosition(Vector2f(_laterStartX, _laterStartY));
+        _laterStartX += _laterSize.x + _laterSpacing;
+    }
 
-    MeshActor* _descriptionBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(440.0f, 400.0f), "Paddle")));
+    MeshActor* _descriptionBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(400.0f, 360.0f), "Paddle")));
     MeshActor* _charaBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(250.0f, 240.0f), "Floor")));
     MeshActor* _playerLifeBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(250.0f, 50.0f), "Paddle")));
     MeshActor* _skillDescriptionBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(250.0f, 240.0f), "Floor")));
-    MeshActor* _skillBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(150.0f, 100.0f), "Paddle")));
-    MeshActor* _fameBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(200.0f, 100.0f), "Paddle")));
-    MeshActor* _goldBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(200.0f, 100.0f), "Paddle")));
-
+    MeshActor* _skillBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(125.0f, 100.0f), "Paddle")));
+    
     _mainBox->SetPosition(Vector2f(800.0f, 105.0f));
 
-    _descriptionBox->SetPosition(Vector2f(1315.0f, 300.0f));
+    _descriptionBox->SetPosition(Vector2f(1274.0f, 300.0f));
     _charaBox->SetPosition(Vector2f(918.0f, 200.0f));
     _playerLifeBox->SetPosition(Vector2f(918.0f, 440.0f));
     _skillDescriptionBox->SetPosition(Vector2f(918.0f, 567.0f));
     _skillBox->SetPosition(Vector2f(918.0f, 567.0f));
-    _fameBox->SetPosition(Vector2f(1315.0f, 720.0f));
-    _goldBox->SetPosition(Vector2f(1555.0f, 720.0f));
 };
 
 bool Game::Update()
