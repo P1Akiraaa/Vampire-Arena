@@ -23,35 +23,36 @@ enum RarityType
 	RT_COUNT
 };
 
+struct ItemData
+{
+	string name = "La non nommée";
+	string description = "Feur";
+	u_int upgradePrice = 0;
+	EquipmentType equipmentType = ET_SLASHING;
+	RarityType rarity = RT_JUNK;
+
+	ItemData() = default;
+	ItemData(const string& _name, const string& _description,
+		const u_int& _upgradePrice, const EquipmentType& _equipmentType, const RarityType& _rarity);
+};
+
 class Item
 {
+
 protected:
-	string name;
-	string description;
-	int upgradePrice;
-	EquipmentType type;
-	RarityType rarity;
+	ItemData itemData;
 
 public:
-	FORCEINLINE string GetName() const
+	FORCEINLINE ItemData GetItemData() const
 	{
-		return name;
+		return itemData;
 	}
-	FORCEINLINE string GetDescription() const
+	FORCEINLINE void SetItemData(const ItemData& _itemData)
 	{
-		return description;
-	}
-	FORCEINLINE int GetUpgradePrice() const
-	{
-		return upgradePrice * rarity;
-	}
-	FORCEINLINE int GetRarity() const
-	{
-		return rarity;
+		itemData = _itemData;
 	}
 
 public:
 	Item() = default;
-	Item(const string& _name, const string& _description, const int _upgradePrice,
-		const EquipmentType& _type, const RarityType& _rarity);
+	Item(const ItemData& _data);
 };
