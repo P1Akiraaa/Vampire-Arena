@@ -1,8 +1,9 @@
 #pragma once
+#include "Level.h"
 #include "Player.h"
 #include "Enemy.h"
 
-class CombatLevel
+class CombatLevel : public Level
 {
 	Player* player;
 	Enemy* enemy;

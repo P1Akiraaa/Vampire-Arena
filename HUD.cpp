@@ -17,6 +17,7 @@ UI::HUD::~HUD()
 	}
 }
 
+
 void UI::HUD::AddToViewport(Widget* _widget)
 {
 	_widget->Construct();
