@@ -1,23 +1,32 @@
 #pragma once
-#include "Equipable.h"
+#include "Equippable.h"
 
-class Weapon : public Equipable
+struct WeaponData
 {
-	int reach;
-	int attackValue;
-	int attackSpeed;
+	u_int reach = 0;
+	double attackValue = 0.0;
+	u_int attackSpeed = 0;
+
+	WeaponData() = default;
+	WeaponData(const u_int& _reach, const double _attackValue, const u_int& _attackSpeed);
+};
+
+class Weapon : public Equippable
+{
+	WeaponData weaponData;
 
 public:
-	FORCEINLINE int GetReach() const
+
+	FORCEINLINE WeaponData GetWeaponData() const
 	{
-		return reach;
+		return weaponData;
 	}
-	FORCEINLINE double GetAttackValue() const
+	FORCEINLINE void SetWeaponData(const WeaponData& _weaponData)
 	{
-		return ((equipableStat * weight) * (1 + (static_cast<int>(rarity) * 0.1)) * 0.9);
+		weaponData = _weaponData;
 	}
-	FORCEINLINE int GetAttackSpeed() const
-	{
-		return attackSpeed;
-	}
+
+	Weapon() = default;
+	Weapon(const Weapon& _other);
+	Weapon(const WeaponData& _weaponData, const EquippableData& _equippableData, const ItemData& _itemData);
 };

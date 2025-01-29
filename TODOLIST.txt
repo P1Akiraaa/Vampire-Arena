@@ -1,5 +1,3 @@
-Architecture des widgets
-InputManager -> Fait
 Mettre à jour l'UML
 
 Differents levels 

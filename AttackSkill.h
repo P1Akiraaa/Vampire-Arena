@@ -20,9 +20,6 @@ public:
 	AttackSkill() = default;
 	AttackSkill(const string& _name, const string& _description);
 
-private:
-	void ApplySkillEffect()
-	{
-		//TODO
-	}
+	virtual void Use(Character* _character) = 0;
+
 };
