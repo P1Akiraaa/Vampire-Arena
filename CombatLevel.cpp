@@ -4,9 +4,21 @@ CombatLevel::CombatLevel(Character* _player, Character* _enemy)
 {
 	player = _player;
 	enemy = _enemy;
+	round = 1;
 }
 
-void CombatLevel::Open()
+void CombatLevel::Round()
+{
+}
+
+void CombatLevel::Start()
 {
 
 }
+
+void CombatLevel::End()
+{
+}
+
+
+

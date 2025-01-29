@@ -92,6 +92,6 @@ public:
 	Character(const RectangleShapeData& _data, const CharacterData& _characterData);
 	~Character();
 public:
-	void Attack(const int _amount);
+	void Attack(const u_int _amount);
 	void Defend();
 };
