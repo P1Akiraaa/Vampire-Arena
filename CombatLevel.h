@@ -1,15 +1,15 @@
 #pragma once
 #include "Level.h"
-#include "Player.h"
-#include "Enemy.h"
+#include "Character.h"
 
 class CombatLevel : public Level
 {
-	Player* player;
-	Enemy* enemy;
+	Character* player;
+	Character* enemy;
 
 public:
 	CombatLevel() = default;
+	CombatLevel(Character* _player, Character* _enemy);
 
 public:
 	void Open();
