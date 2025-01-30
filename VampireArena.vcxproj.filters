@@ -127,6 +127,15 @@
     <Filter Include="Scripts\Managers\HUD">
       <UniqueIdentifier>{5d4c76eb-55ce-4943-ae13-e1b2876d29c1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scripts\Core\Actors\Widget\Boxes">
+      <UniqueIdentifier>{22c86ffd-1cc2-472d-8918-9f288fe9a8fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Core\Actors\Widget\Boxes\HorizontalBox">
+      <UniqueIdentifier>{a88b3411-ad02-412d-8087-b342dc5a26d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Core\Actors\Widget\Boxes\VerticalBox">
+      <UniqueIdentifier>{9b72e33d-8f74-4f32-9967-82c8e435b8cc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TextObject.cpp">
@@ -266,6 +275,15 @@
     </ClCompile>
     <ClCompile Include="Equippable.cpp">
       <Filter>VampireSurvivor</Filter>
+    </ClCompile>
+    <ClCompile Include="HorizontalBox.cpp">
+      <Filter>Scripts\Core\Actors\Widget\Boxes\HorizontalBox</Filter>
+    </ClCompile>
+    <ClCompile Include="VerticalBox.cpp">
+      <Filter>Scripts\Core\Actors\Widget\Boxes\VerticalBox</Filter>
+    </ClCompile>
+    <ClCompile Include="Boxes.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -433,6 +451,15 @@
     </ClInclude>
     <ClInclude Include="Equippable.h">
       <Filter>VampireSurvivor</Filter>
+    </ClInclude>
+    <ClInclude Include="HorizontalBox.h">
+      <Filter>Scripts\Core\Actors\Widget\Boxes\HorizontalBox</Filter>
+    </ClInclude>
+    <ClInclude Include="VerticalBox.h">
+      <Filter>Scripts\Core\Actors\Widget\Boxes\VerticalBox</Filter>
+    </ClInclude>
+    <ClInclude Include="Boxes.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

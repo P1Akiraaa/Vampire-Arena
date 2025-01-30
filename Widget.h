@@ -1,6 +1,8 @@
 #pragma once
 #include "Actor.h"
 #include "RenderType.h"
+#include "MeshActor.h"
+
 namespace UI
 {
 	// Permet de mettre le type de visibilité

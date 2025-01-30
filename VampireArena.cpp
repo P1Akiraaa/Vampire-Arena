@@ -16,7 +16,6 @@ void VampireArena::Start()
 {
 	Super::Start();
 
-
 	Label* _label = M_HUD.CreateWidget<Label>("Vampire Areana", World);
 	_label->SetZOrder(1);
 	M_HUD.AddToViewport(_label);
