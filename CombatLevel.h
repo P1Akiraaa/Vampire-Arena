@@ -1,20 +1,21 @@
 #pragma once
 #include "Level.h"
-#include "Character.h"
+#include "Player.h"
+#include "Enemy.h"
 #include "Game.h"
 
 class CombatLevel : public Game
 {
 	MeshActor* backGround;
 
-	Character* player;
-	Character* enemy;
+	Player* player;
+	Enemy* enemy;
 
 	u_int round;
 
 public:
 	CombatLevel();
-	CombatLevel(Character* _player, Character* _enemy);
+	CombatLevel(Player* _player, Enemy* _enemy);
 
 public:
 	virtual void Start() override;

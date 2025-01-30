@@ -7,14 +7,16 @@ CombatLevel::CombatLevel()
 	round = 1;
 
 	backGround = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(1920, 1080), "Arena", PNG)));
-	CharacterData _data = CharacterData("Player");
-	player = Level::SpawnActor(Character(RectangleShapeData(Vector2f(300.0f, 300.0f)), _data));
+	CharacterData _data1 = CharacterData("Thomas");
+	player = Level::SpawnActor(Player(RectangleShapeData(Vector2f(300.0f, 300.0f), "Player"), _data1));
 	player->SetPosition(Vector2f(100.0f, 223.5f));
-	enemy = Level::SpawnActor(Character(RectangleShapeData(Vector2f(300.0f, 300.0f)), _data));
-	enemy->SetPosition(Vector2f(1485.0f, 223.5f));
+	CharacterData _data2 = CharacterData("TrouDuc");
+	enemy = Level::SpawnActor(Enemy(RectangleShapeData(Vector2f(300.0f, 300.0f), "Enemy"), _data2));
+	enemy->SetPosition(Vector2f(1785.0f, 223.5f));
+	enemy->SetScale(Vector2f(-1.0f, 1.0f));
 }
 
-CombatLevel::CombatLevel(Character* _player, Character* _enemy)
+CombatLevel::CombatLevel(Player* _player, Enemy* _enemy)
 {
 	backGround = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(1920, 1080), "Arena", PNG)));
 	player = _player;

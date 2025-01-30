@@ -33,6 +33,7 @@ class Character : public MeshActor
 {
 	CharacterData characterData;
 
+protected:
 	AnimationComponent* animation;
 
 public:
