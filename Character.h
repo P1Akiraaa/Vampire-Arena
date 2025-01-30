@@ -5,30 +5,35 @@
 #include "Armor.h"
 #include "AttackSkill.h"
 
+#include "AnimationComponent.h"
+
 struct CharacterData
 {
-	string name = "Laurent";
-	u_int gold = 0;
-	u_int fame = 0;
-	u_int life = 1;
-	u_int lifeMax = 1;
-	u_int speed = 0;
-	bool isFrenzied = false;
-	Weapon* weapon = nullptr;
-	Armor* armor = nullptr;
-	Relic* relic = nullptr;
-	AttackSkill* attackSkill = nullptr;
+	string name;
+	u_int gold;
+	u_int fame;
+	u_int life;
+	u_int lifeMax;
+	u_int speed;
+	bool isFrenzied;
+	Weapon* weapon;
+	Armor* armor;
+	Relic* relic;
+	AttackSkill* attackSkill;
+
 
 	CharacterData() = default;
-	CharacterData(const string& _name, const u_int _gold, const u_int _fame,
-		const u_int _life, const u_int lifeMax,
-		const bool _isFrienzied, Weapon* _weapon, Armor* _armor, Relic* _relic, AttackSkill* _attackSkill);
+	CharacterData(const string& _name, const u_int _gold = 100, const u_int _fame = 100,
+		const u_int _life = 100, const u_int lifeMax = 200,
+		const bool _isFrienzied = false, Weapon* _weapon = nullptr, Armor* _armor = nullptr, Relic* _relic = nullptr, AttackSkill* _attackSkill = nullptr); // TODO change default parameters
 
 };
 
 class Character : public MeshActor
 {
 	CharacterData characterData;
+
+	AnimationComponent* animation;
 
 public:
 
@@ -89,9 +94,17 @@ public:
 
 public:
 	Character() = default;
-	Character(const RectangleShapeData& _data, const CharacterData& _characterData);
+	Character(const Character& _other);
+	Character(const RectangleShapeData& _data ,const CharacterData& _characterData);
+	Character(const float _radius, const CharacterData& _characterData);
 	~Character();
 public:
 	void Attack(const u_int _amount);
 	void Defend();
+
+	virtual void RenderMesh(RenderWindow& _window) override;
+	virtual void Tick(const float _deltaTime) override;
+	virtual void Construct() override;
+	virtual void Deconstruct() override;
+	void StartAnim();
 };

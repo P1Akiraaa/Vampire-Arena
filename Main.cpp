@@ -1,6 +1,8 @@
 #include "VampireArena.h"
 #include "GameManager.h"
 
+#include "CombatLevel.h"
+
 void InitConfig()
 {
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
@@ -9,8 +11,10 @@ void InitConfig()
 
 int main()
 {
+    
+
     InitConfig();
-    M_GAME.Launch(new VampireArena());
+    M_GAME.Launch(new CombatLevel());
 
 	return EXIT_SUCCESS;
 }

@@ -74,8 +74,8 @@ public:
 
 	
 
-private:
-	void RenderMesh(RenderWindow& _window);
+protected:
+	virtual void RenderMesh(RenderWindow& _window);
 
 public:
 	virtual void Construct() override;
