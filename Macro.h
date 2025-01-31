@@ -48,6 +48,11 @@
 #define SLEEP(_duration) sleep(_duration)
 #define NO_DISCARD _NODISCARD
 #define IS_BASE_OF(_base, _type) typename = enable_if_t<is_base_of_v<_base, _type>>
+#define ATTACK equipableData.equipableStat
+#define RESISTANCE equipableData.equipableStat
+#define WEIGHT equipableData.weight
+#define REACH equipableData.weight
+#define RARITY itemData.rarity
 
 using namespace std;
 using namespace sf;

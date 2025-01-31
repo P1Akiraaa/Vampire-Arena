@@ -8,19 +8,33 @@ Character::Character(const RectangleShapeData& _data, const CharacterData& _char
 	lifeComponent = CreateComponent<LifeComponent>(100);
 }
 
+CharacterData::CharacterData(const string& _name, const u_int _gold, const u_int _fame,
+	const bool _isFrienzied,
+	Weapon* _weapon, Armor* _armor, Relic* _relic, AttackSkill* _attackSkill)
+{
+	name = _name;
+	gold = _gold;
+	fame = _fame;
+	isFrenzied = _isFrienzied;
+	weapon = _weapon;
+	armor = _armor;
+	relic = _relic;
+	attackSkill = _attackSkill;
+}
+
 Character::~Character()
 {
 
 }
 
-void Character::Attack()
+int Character::Attack()
 {
-	characterData.weapon->GetWeaponData().attackValue;
+	return characterData.weapon->GetAttackValue();
 }
 
-void Character::Defend()
+int Character::Defend()
 {
-	characterData.armor->GetResistance();
+	return characterData.armor->GetResistance();
 }
 
 void Character::RenderMesh(RenderWindow& _window)
@@ -46,18 +60,4 @@ void Character::Deconstruct()
 void Character::StartAnim()
 {
 	animation->StartAnimation();
-}
-
-CharacterData::CharacterData(const string& _name, const u_int _gold, const u_int _fame, 
-							 const bool _isFrienzied,
-							 Weapon* _weapon, Armor* _armor, Relic* _relic, AttackSkill* _attackSkill)
-{
-	name = _name;
-	gold = _gold;
-	fame = _fame;
-	isFrenzied = _isFrienzied;
-	weapon = _weapon;
-	armor = _armor;
-	relic = _relic;
-	attackSkill = _attackSkill;
 }

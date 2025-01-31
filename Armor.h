@@ -1,35 +1,31 @@
 #pragma once
-#include "Equippable.h"
+#include "Equipable.h"
 
-struct ArmorData
+class Armor : public Equipable
 {
-	u_int resistance = 0;
 
-	ArmorData() = default;
-	ArmorData(const u_int& _armorData);
-};
-
-class Armor : public Equippable
-{
-	ArmorData armorData;
-
-public:
-	FORCEINLINE ArmorData GetArmorData() const
+public :
+	
+	inline double GetWeight() const
 	{
-		return armorData;
-	}
-	FORCEINLINE u_int GetResistance() const
-	{
-		return armorData.resistance;
-	}
-	FORCEINLINE u_int GetWeight() const
-	{
-		return ((equippableData.equippableStat / 2) * equippableData.weight) * (static_cast<int>(itemData.rarity) * 0.1);
+		return WEIGHT;
 	}
 
-public:
-	Armor() = default;
-	Armor(const ArmorData& _armorData, const EquippableData& _equippableData,
-		const ItemData& _itemData);
+	inline double GetResistance() const
+	{
+		return ((RESISTANCE / 2) * WEIGHT) * (double(RARITY) * 0.1);
+	}
+
+public :
+	// Random
+	Armor();
+	// Copie
 	Armor(const Armor& _other);
+	// Manuel
+	Armor(ElementType _elementType, double _weight, RarityType _rarity = RT_JUNK);
+
+	string ComputeArmorName();
+	string ComputeArmorDescription();
+	Texture GetArmorTexture();
 };
+

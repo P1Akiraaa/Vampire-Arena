@@ -1,17 +1,13 @@
 #include "Item.h"
 
-ItemData::ItemData(const string& _name, const string& _description,
-	const u_int& _upgradePrice, const EquipmentType& _equipmentType,
-	const RarityType& _rarity)
+string Item::GetRarityName()
 {
-	name = _name;
-	description = _description;
-	upgradePrice = _upgradePrice;
-	equipmentType = _equipmentType;
-	rarity = _rarity;
+    string _rarityName[] = { "Médiocre","Commune" ,"Extravagante" ,"Rare", "Épique", "Légendaire","Sanguine" };
+    return _rarityName[itemData.rarity - 1];
 }
 
-Item::Item(const ItemData& _data)
+string Item::GetFlavorText()
 {
-	itemData = _data;
+    string _flavorText[] = { "se moqueront de vous", "regagneront confiance", "se méfieront", "seront sur leur garde", "vous craindront", "s'enfuiront", "vous supplieront de les épargner" };
+    return _flavorText[itemData.rarity - 1] + " en voyant un tel objet.";
 }

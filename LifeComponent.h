@@ -9,9 +9,9 @@ class LifeComponent : public Component
 
 public:
 
-	FORCEINLINE bool IsAlived() const
+	FORCEINLINE bool IsAlive() const
 	{
-		return isAlived;
+		return isAlive;
 	}
 
 	FORCEINLINE u_int GetCurrentLife() const
@@ -21,8 +21,9 @@ public:
 
 	void DescreaseCurrentLife(const u_int& _damage);
 
-	void CheckIsAlived();
+	void CheckIsAlive();
 
 	LifeComponent(Actor* _owner, const u_int& _maxLife);
 	LifeComponent(Actor* _owner, const LifeComponent* _other);
 };
+

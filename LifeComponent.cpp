@@ -5,21 +5,21 @@ void LifeComponent::DescreaseCurrentLife(const u_int& _damage)
 	currentLife = currentLife - _damage > 0 ? currentLife - _damage : 0;
 }
 
-void LifeComponent::CheckIsAlived()
+void LifeComponent::CheckIsAlive()
 {
-	isAlived = currentLife > 0;
+	isAlive = currentLife > 0;
 }
 
 LifeComponent::LifeComponent(Actor* _owner, const u_int& _maxLife) : Component(_owner)
 {
 	maxlife = _maxLife;
 	currentLife = _maxLife;
-	CheckIsAlived();
+	CheckIsAlive();
 }
 
 LifeComponent::LifeComponent(Actor* _owner, const LifeComponent* _other) : Component(_owner)
 {
 	maxlife = _other->maxlife;
 	currentLife = _other->currentLife;
-	isAlived = _other->isAlived;
+	isAlive = _other->isAlive;
 }

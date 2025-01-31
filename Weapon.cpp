@@ -1,21 +1,87 @@
 #include "Weapon.h"
+#include "Utilities.h"
 
 Weapon::Weapon(const Weapon& _other)
-	: Equippable(_other.equippableData, _other.itemData)
 {
-	weaponData = _other.weaponData;
+	equipableData = _other.equipableData;
+	itemData = _other.itemData;
 }
 
-Weapon::Weapon(const WeaponData& _weaponData, const EquippableData& _equippableData
-	, const ItemData& _itemData)
-	: Equippable(_equippableData, _itemData)
+Weapon::Weapon()
 {
-	weaponData = _weaponData;
+	equipableData.element = ElementType(GetRandomNumberInRange(1, 3));
+	equipableData.weight = double(GetRandomNumberInRange(1, 20) / 10);
+	equipableData.size = EquipableSize(GetSize());
+	itemData.name = ComputeWeaponName();
+	itemData.description = ComputeWeaponDescription();
+	itemData.texture = GetWeaponTexture();
+	itemData.upgradePrice = (equipableData.equipableStat * 10) * double(itemData.rarity);	
+}
+Weapon::Weapon(ElementType _elementType, double _weight, RarityType _rarity)
+{
+	equipableData.element = _elementType;
+	equipableData.weight = _weight;
+	itemData.rarity = _rarity;
+	equipableData.size = EquipableSize(GetSize());
+	itemData.name = ComputeWeaponName();
+	itemData.description = ComputeWeaponDescription();
+	itemData.texture = GetWeaponTexture();
+	itemData.upgradePrice = (equipableData.equipableStat * 10) * double(itemData.rarity);
 }
 
-WeaponData::WeaponData(const u_int& _reach, const double _attackValue, const u_int& _attackSpeed)
+string Weapon::ComputeWeaponName()
 {
-	reach = _reach;
-	attackValue = _attackValue;
-	attackSpeed = _attackSpeed;
+	const int _index = CAST(int, equipableData.element) - 1;
+	const vector<function<string()>>& _weaponName =
+	{
+		[&]()
+		{
+			string _slashName[] = { "Dagger", "Sword", "Claymore" };
+			return _slashName[equipableData.size - 1];
+		},
+		[&]()
+		{
+			 string _bluntName[] = { "Fist", "Mace", "Hammer" };
+			 return _bluntName[equipableData.size - 1];
+		},
+		[&]()
+		{
+			string _pierceName[] = { "Katar", "Spear", "Lance" };
+		    return _pierceName[equipableData.size - 1];
+		},
+	};
+	return _weaponName[_index]();
 }
+
+string Weapon::ComputeWeaponDescription()
+{
+	return string(ComputeWeaponName() + " de qualité " + GetRarityName() + ". \n" + GetFlavorText());
+}
+
+Texture Weapon::GetWeaponTexture()
+{
+	const int _index = CAST(int, equipableData.element) - 1;
+	const vector<function<Texture()>>& _weaponTexture =
+	{
+		[&]()
+		{
+			string _slashName[] = { "Dagger", "Sword", "Claymore" };
+		return Texture("Assets/Textures/Equipable/Weapon/Slash/" + _slashName[equipableData.size - 1] 
+					 + "/" + "rarity" + to_string(itemData.rarity) + ".png");
+		},
+		[&]()
+		{
+			 string _bluntName[] = { "Fist", "Mace", "Hammer" };
+		return Texture("Assets/Textures/Equipable/Weapon/Slash/" + _bluntName[equipableData.size - 1] 
+					 + "/" + "rarity" + to_string(itemData.rarity) + ".png");
+		},
+		[&]()
+		{
+			string _pierceName[] = { "Katar", "Spear", "Lance" };
+		return Texture("Assets/Textures/Equipable/Weapon/Slash/" + _pierceName[equipableData.size - 1] 
+					 + "/" + "rarity" + to_string(itemData.rarity) + ".png");
+		},
+	};
+	return _weaponTexture[_index]();
+}
+

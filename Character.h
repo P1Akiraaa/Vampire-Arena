@@ -12,6 +12,18 @@ struct CharacterData
 	string name;
 	u_int gold = 0;
 	u_int fame = 0;
+	u_int speed = 100;
+	u_int lifeMax = 100;
+	u_int speed = 0;
+	u_int lifeMax = 100;
+	u_int speed = 0;
+	u_int lifeMax = 100;
+	u_int speed = 0;
+	u_int lifeMax = 100;
+	u_int speed = 0;
+	u_int lifeMax = 100;
+	u_int speed = 0;
+	u_int lifeMax = 100;
 	u_int speed = 0;
 	bool isFrenzied = false;
 	Weapon* weapon = nullptr;
@@ -20,11 +32,11 @@ struct CharacterData
 	AttackSkill* attackSkill = nullptr;
 
 	CharacterData() = default;
-	CharacterData(const string& _name, const u_int _gold = 0, const u_int _fame = 0,
-		const bool _isFrienzied = false, Weapon* _weapon = nullptr, Armor* _armor = nullptr, Relic* _relic = nullptr, AttackSkill* _attackSkill = nullptr);
-};
+	FORCEINLINE LifeComponent* GetLifeComponent() const
+	{
+		return lifeComponent;
+	}
 
-class Character : public MeshActor
 {
 	CharacterData characterData;
 	AnimationComponent* animation;
@@ -85,8 +97,8 @@ public:
 		}
 		FORCEINLINE void RemoveFame(const u_int& _amount)
 		{
-			characterData.fame = (characterData.fame - _amount < 0 ? 0 : characterData.fame - _amount);
-		}
+	int Attack();
+	int Defend();
 
 	#pragma endregion
 
@@ -97,7 +109,7 @@ public:
 	Character(const RectangleShapeData& _data, const CharacterData& _characterData);
 	~Character();
 public:
-	void Attack();
+	void Attack(const u_int _amount);
 	void Defend();
 
 	virtual void RenderMesh(RenderWindow& _window);

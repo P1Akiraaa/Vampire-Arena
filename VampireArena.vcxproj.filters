@@ -282,6 +282,9 @@
     <ClCompile Include="HUD.cpp">
       <Filter>Scripts\Managers\HUD</Filter>
     </ClCompile>
+    <ClCompile Include="Equipable.cpp">
+      <Filter>VampireSurvivor</Filter>
+    </ClCompile>
     <ClCompile Include="HorizontalBox.cpp">
       <Filter>Scripts\Core\Actors\Widget\Boxes\HorizontalBox</Filter>
     </ClCompile>
@@ -317,6 +320,9 @@
     </ClCompile>
     <ClCompile Include="LifeComponent.cpp">
       <Filter>Scripts\Core\Components\Life</Filter>
+    </ClCompile>
+    <ClCompile Include="LifeComponent.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -464,6 +470,9 @@
     <ClInclude Include="HUD.h">
       <Filter>Scripts\Managers\HUD</Filter>
     </ClInclude>
+    <ClInclude Include="Equipable.h">
+      <Filter>VampireSurvivor</Filter>
+    </ClInclude>
     <ClInclude Include="HorizontalBox.h">
       <Filter>Scripts\Core\Actors\Widget\Boxes\HorizontalBox</Filter>
     </ClInclude>
@@ -499,6 +508,9 @@
     </ClInclude>
     <ClInclude Include="LifeComponent.h">
       <Filter>Scripts\Core\Components\Life</Filter>
+    </ClInclude>
+    <ClInclude Include="LifeComponent.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

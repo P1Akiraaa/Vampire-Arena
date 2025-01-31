@@ -58,6 +58,8 @@ void CombatLevel::Start()
 		MeshActor* _sideButton2 = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(300.0f, 200.0f), "Default")));
 		_sideButton2->SetPosition(Vector2f(_sideStartX + _index * _spaceBetween.x, _sideButton->GetPosition().y + _sideButton->GetMesh()->GetShape()->GetDrawable()->getGlobalBounds().size.y + _spaceBetween.y));
 	}
+
+	
 }
 
 bool CombatLevel::Update()
