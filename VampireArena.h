@@ -11,5 +11,8 @@ public:
 	virtual bool Update();
 	void UpdateWindow();
 	virtual void Stop();
+
+private:
+	void InitButton();
 };
 

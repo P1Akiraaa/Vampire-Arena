@@ -9,10 +9,20 @@ CombatLevel::CombatLevel(Character* _player, Character* _enemy)
 	enemy->SetPosition(Vector2f(1785.0f, 223.5f));
 	round = 1;
 
+	roundTimer = new Timer<Seconds>([&]() {CombatLevel::Round(); }, seconds(2.0f), true, true);
+	M_TIMER.AddTimer(roundTimer);
+
 }
 
 void CombatLevel::Round()
 {
+	if (player->GetLifeComponent()->IsAlived());
+
+}
+
+void CombatLevel::CombatFinished()
+{
+	M_TIMER.RemoveTimer(roundTimer);
 }
 
 void CombatLevel::Start()
@@ -33,12 +43,13 @@ void CombatLevel::Start()
 		MeshActor* _sideButton2 = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(300.0f, 200.0f), "Default")));
 		_sideButton2->SetPosition(Vector2f(_sideStartX + _index * _spaceBetween.x, _sideButton->GetPosition().y + _sideButton->GetMesh()->GetShape()->GetDrawable()->getGlobalBounds().size.y + _spaceBetween.y));
 	}
+
+	
 }
 
 bool CombatLevel::Update()
 {
 	Super::Update();
-
 	return IsOver();
 }
 

@@ -9,6 +9,7 @@ class CombatLevel : public Game
 	Character* player;
 	Character* enemy;
 	u_int round;
+	Timer<Seconds>* roundTimer;
 
 public:
 	CombatLevel() = default;
@@ -21,4 +22,5 @@ public:
 
 private:
 	void Round();
+	void CombatFinished();
 };
