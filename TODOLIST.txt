@@ -14,7 +14,6 @@ Spawn/Génération d'ennemis aléatoire:
 	-> Selection aléatoire d'item parmis ceux existant
 	-> Système de modificateur pour augmenter la difficulté (rareté des items drop, + de vie, + de résistance)
 
-Taux de drop des items
 
 Assets textures:
 	-> Backgrounds
@@ -32,6 +31,10 @@ Assets sounds/musics:
 
 Assets fonts
 
+
+
+
+Taux de drop des items
 Level Forge
 Level Saboteur
 Ranger les fichiers dans le projet

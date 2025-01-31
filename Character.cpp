@@ -11,12 +11,12 @@ Character::~Character()
 
 }
 
-u_int Character::Attack(const u_int _amount)
+void Character::Attack(const u_int _amount)
 {
 	//TODO Attack
 }
 
-u_int Character::Defend()
+void Character::Defend()
 {
 	//TODO Defend
 }

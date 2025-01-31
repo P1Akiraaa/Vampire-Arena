@@ -20,6 +20,5 @@ public:
 	AttackSkill() = default;
 	AttackSkill(const string& _name, const string& _description);
 
-	virtual void Use(Character* _character) = 0;
-
+	//virtual void Use(Character* _character) = 0;
 };
