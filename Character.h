@@ -32,6 +32,11 @@ class Character : public MeshActor
 
 public:
 
+	FORCEINLINE LifeComponent* GetLifeComponent() const
+	{
+		return lifeComponent;
+	}
+
 	#pragma region Getters
 
 	FORCEINLINE CharacterData GetCharacterData() const

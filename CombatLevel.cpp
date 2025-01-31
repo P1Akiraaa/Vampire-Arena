@@ -8,6 +8,7 @@ CombatLevel::CombatLevel(Character* _player, Character* _enemy)
 	enemy = Level::SpawnActor(Character(RectangleShapeData(Vector2f(300.0f, 300.0f), "Enemy"), CharacterData("Laurent")));
 	enemy->SetPosition(Vector2f(1785.0f, 223.5f));
 	round = 1;
+
 	roundTimer = new Timer<Seconds>([&]() {CombatLevel::Round(); }, seconds(2.0f), true, true);
 	M_TIMER.AddTimer(roundTimer);
 
@@ -15,12 +16,13 @@ CombatLevel::CombatLevel(Character* _player, Character* _enemy)
 
 void CombatLevel::Round()
 {
+	if (player->GetLifeComponent()->IsAlived());
 
 }
 
 void CombatLevel::CombatFinished()
 {
-	//if(player.)
+	M_TIMER.RemoveTimer(roundTimer);
 }
 
 void CombatLevel::Start()
