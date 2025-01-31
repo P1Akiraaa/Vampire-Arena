@@ -9,6 +9,7 @@ CombatLevel::CombatLevel(Character* _player, Character* _enemy)
 
 void CombatLevel::Round()
 {
+
 }
 
 void CombatLevel::Start()
