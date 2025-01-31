@@ -1,5 +1,6 @@
 #include "VampireArena.h"
 #include "GameManager.h"
+#include "CombatLevel.h"
 #include <memory>
 
 void InitConfig()
@@ -11,7 +12,7 @@ void InitConfig()
 int main()
 {
     InitConfig();
-    M_GAME.Launch(new VampireArena());
+    M_GAME.Launch(new CombatLevel());
 
     return EXIT_SUCCESS;
 }

@@ -4,26 +4,27 @@
 #include "Relic.h"
 #include "Armor.h"
 #include "AttackSkill.h"
+#include "AnimationComponent.h"
 
 struct CharacterData
 {
-	string name = "Laurent";
+	string name;
 	u_int gold = 0;
 	u_int fame = 0;
-	u_int life = 1;
-	u_int lifeMax = 1;
+	u_int life = 100;
+	u_int lifeMax = 100;
 	u_int speed = 0;
 	bool isFrenzied = false;
 	Weapon* weapon = nullptr;
 	Armor* armor = nullptr;
 	Relic* relic = nullptr;
 	AttackSkill* attackSkill = nullptr;
+	AnimationComponent* animation;
 
 	CharacterData() = default;
-	CharacterData(const string& _name, const u_int _gold, const u_int _fame,
-		const u_int _life, const u_int lifeMax,
-		const bool _isFrienzied, Weapon* _weapon, Armor* _armor, Relic* _relic, AttackSkill* _attackSkill);
-
+	CharacterData(const string& _name, const u_int _gold = 0, const u_int _fame = 0,
+		const u_int _life = 100, const u_int lifeMax = 100,
+		const bool _isFrienzied = false, Weapon* _weapon = nullptr, Armor* _armor = nullptr, Relic* _relic = nullptr, AttackSkill* _attackSkill = nullptr, AnimationComponent* _animation = nullptr);
 };
 
 class Character : public MeshActor
@@ -94,4 +95,10 @@ public:
 public:
 	void Attack(const u_int _amount);
 	void Defend();
+
+	virtual void RenderMesh(RenderWindow& _window);
+	virtual void Tick(const float _deltaTime) override;
+	virtual void Construct() override;
+	virtual void Deconstruct() override;
+	void StartAnim();
 };

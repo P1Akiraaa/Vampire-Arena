@@ -74,7 +74,7 @@ public:
 
 	
 
-private:
+protected:
 	void RenderMesh(RenderWindow& _window);
 
 public:
