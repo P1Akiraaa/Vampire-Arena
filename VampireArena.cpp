@@ -4,6 +4,7 @@
 #include "HorizontalBox.h"
 #include "VerticalBox.h"
 #include"CombatLevel.h"
+#include "MouseActor.h"
 
 using namespace UI;
 
@@ -13,6 +14,7 @@ VampireArena::VampireArena() : Game()
 
 VampireArena::~VampireArena()
 {
+
 }
 
 void VampireArena::Start()
@@ -26,7 +28,8 @@ void VampireArena::Start()
 
     InitButton();
 
-
+    MouseActor* _mouse = Level::SpawnActor(MouseActor(10.0f, 30, "Transparent"));
+    _mouse->SetOriginAtMiddle();
 }
 
 bool VampireArena::Update()

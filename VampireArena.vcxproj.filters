@@ -285,6 +285,12 @@
     <ClCompile Include="Boxes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LifeComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MouseActor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Singleton.h">
@@ -459,6 +465,12 @@
       <Filter>Scripts\Core\Actors\Widget\Boxes\VerticalBox</Filter>
     </ClInclude>
     <ClInclude Include="Boxes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LifeComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseActor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
