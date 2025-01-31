@@ -6,7 +6,6 @@ Character::Character(const RectangleShapeData& _data, const CharacterData& _char
 	characterData = _characterData;
 	animation = CreateComponent<AnimationComponent>();
 	lifeComponent = CreateComponent<LifeComponent>(100);
-	
 }
 
 Character::~Character()
@@ -14,14 +13,14 @@ Character::~Character()
 
 }
 
-void Character::Attack(const u_int _amount)
+void Character::Attack()
 {
-	//TODO Attack
+	characterData.weapon->GetWeaponData().attackValue;
 }
 
 void Character::Defend()
 {
-	//TODO Defend
+	characterData.armor->GetResistance();
 }
 
 void Character::RenderMesh(RenderWindow& _window)

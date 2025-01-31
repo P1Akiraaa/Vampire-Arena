@@ -97,7 +97,7 @@ public:
 	Character(const RectangleShapeData& _data, const CharacterData& _characterData);
 	~Character();
 public:
-	void Attack(const u_int _amount);
+	void Attack();
 	void Defend();
 
 	virtual void RenderMesh(RenderWindow& _window);

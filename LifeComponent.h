@@ -26,4 +26,3 @@ public:
 	LifeComponent(Actor* _owner, const u_int& _maxLife);
 	LifeComponent(Actor* _owner, const LifeComponent* _other);
 };
-

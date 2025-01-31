@@ -160,6 +160,9 @@
     <Filter Include="Scripts\Core\Actors\Widget\Buttons">
       <UniqueIdentifier>{7a3b1e9c-88fe-47f5-bc57-52fbede506b0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scripts\Core\Components\Life">
+      <UniqueIdentifier>{eb6807f0-1105-4d2d-9ebb-94cb2a958257}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TextObject.cpp">
@@ -311,6 +314,9 @@
     </ClCompile>
     <ClCompile Include="Button.cpp">
       <Filter>Scripts\Core\Actors\Widget\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="LifeComponent.cpp">
+      <Filter>Scripts\Core\Components\Life</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -490,6 +496,9 @@
     </ClInclude>
     <ClInclude Include="Button.h">
       <Filter>Scripts\Core\Actors\Widget\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="LifeComponent.h">
+      <Filter>Scripts\Core\Components\Life</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

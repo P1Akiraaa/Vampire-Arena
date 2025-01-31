@@ -23,4 +23,5 @@ public:
 private:
 	void Round();
 	void CombatFinished();
+	
 };
