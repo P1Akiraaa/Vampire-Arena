@@ -30,7 +30,7 @@ void HorizontalBox::CreateHorizontalBox(float _posX, const float _posY, const u_
 
 	for (u_int _index = 0; _index < _count; _index++)
 	{
-		MeshActor* _boxes = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(_sizeX, _size.y), "OtherBorder", PNG)));
+		MeshActor* _boxes = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(_sizeX, _size.y), "OtherBorder")));
 		_boxes->SetPosition(Vector2f(_posX, _posY));
 		_posX += _sizeX + _spacing;
 	}

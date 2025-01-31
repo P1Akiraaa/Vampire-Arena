@@ -12,7 +12,7 @@ void InitConfig()
 int main()
 {
     InitConfig();
-    M_GAME.Launch(new CombatLevel());
+    M_GAME.Launch(new VampireArena());
 
     return EXIT_SUCCESS;
 }

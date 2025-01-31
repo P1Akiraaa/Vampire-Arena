@@ -30,7 +30,7 @@ void VerticalBox::CreateVerticalBox(const float _posX, float _posY, const u_int 
 
 	for (u_int _index = 0; _index < _count; _index++)
 	{
-		MeshActor* _boxes = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(_size.x, _sizeY), "Button", PNG)));
+		MeshActor* _boxes = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(_size.x, _sizeY), "Button")));
 		_boxes->SetPosition(Vector2f(_posX, _posY));
 		_posY += _sizeY + _spacing;
 	}
