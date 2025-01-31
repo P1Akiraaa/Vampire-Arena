@@ -1,8 +1,9 @@
 #include "Widget.h"
 #include "CameraManager.h"
+#include "HUD.h"
+	
 
 using namespace Camera;
-
 
 UI::Widget::Widget(const string& _name, const RenderType& _type) : Actor(_name)
 {

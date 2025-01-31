@@ -21,4 +21,8 @@ enum LayerType
 class CollisionComponent : public Component
 {
 	LayerType layer;
+	CollisionType collision;
+
+public:
+	CollisionComponent(Actor* _owner,const CollisionType& _collision,const LayerType& _layer);
 };

@@ -5,6 +5,7 @@
 #include "VerticalBox.h"
 #include"CombatLevel.h"
 #include "MouseActor.h"
+#include "Button.h"
 
 using namespace UI;
 
@@ -27,9 +28,11 @@ void VampireArena::Start()
 	M_HUD.AddToViewport(_label);
 
     InitButton();
+    RectangleShapeData({ 20.0f,20.0f });
+    //M_HUD.CreateWidget<Button>(Button("bgfggf", RectangleShapeData({ 20.0f,20.0f })));
 
-    MouseActor* _mouse = Level::SpawnActor(MouseActor(10.0f, 30, "Transparent"));
-    _mouse->SetOriginAtMiddle();
+    //MouseActor* _mouse = Level::SpawnActor(MouseActor(10.0f, 30, "Transparent"));
+    //_mouse->SetOriginAtMiddle();
 }
 
 bool VampireArena::Update()

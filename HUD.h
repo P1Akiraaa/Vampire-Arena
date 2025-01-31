@@ -14,6 +14,7 @@ namespace UI
 			if (allWidgets.contains(_widget)) return;
 			allWidgets.insert(_widget);
 		}
+
 	public:
 		template <typename Type, typename ...Args, IS_BASE_OF(Widget, Type)>
 		FORCEINLINE Type* CreateWidget(Args... _args)
@@ -22,10 +23,16 @@ namespace UI
 			RegisterWidget(_widget);
 			return _widget;
 		}
+
 		FORCEINLINE void UnregisterWidget(Widget* _widget)
 		{
 			if (!allWidgets.contains(_widget)) return;
 			allWidgets.erase(_widget);
+		}
+
+		FORCEINLINE set<Widget*> GetAllWidgets() const
+		{
+			return allWidgets;
 		}
 
 	public:

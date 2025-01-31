@@ -16,8 +16,7 @@ void Game::Start()
 {
     window.create(VideoMode({ 1920, 1080 }), "Vampire Arena");
     M_CAMERA.CreateCamera(Vector2f(960.0f, 540.0f), Vector2f(1920.0f, 1080.0f), "Widget");
-    
-    
+    //MouseCursor = MouseActor(10.0f, 30, "Transparent")
 
 };
 
