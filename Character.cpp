@@ -4,6 +4,9 @@ Character::Character(const RectangleShapeData& _data, const CharacterData& _char
 	: MeshActor(_data, _characterData.name)
 {
 	characterData = _characterData;
+	animation = CreateComponent<AnimationComponent>();
+	lifeComponent = CreateComponent<LifeComponent>(100);
+	
 }
 
 Character::~Character()
@@ -43,22 +46,19 @@ void Character::Deconstruct()
 
 void Character::StartAnim()
 {
-	characterData.animation->StartAnimation();
+	animation->StartAnimation();
 }
 
 CharacterData::CharacterData(const string& _name, const u_int _gold, const u_int _fame, 
-	const u_int _life, const u_int _lifeMax, const bool _isFrienzied,
-	Weapon* _weapon, Armor* _armor, Relic* _relic, AttackSkill* _attackSkill, AnimationComponent* _animation)
+							 const bool _isFrienzied,
+							 Weapon* _weapon, Armor* _armor, Relic* _relic, AttackSkill* _attackSkill)
 {
 	name = _name;
 	gold = _gold;
 	fame = _fame;
-	life = _life;
-	lifeMax = _lifeMax;
 	isFrenzied = _isFrienzied;
 	weapon = _weapon;
 	armor = _armor;
 	relic = _relic;
 	attackSkill = _attackSkill;
-	animation = _animation;
 }
