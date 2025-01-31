@@ -147,6 +147,7 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClCompile Include="Armor.cpp" />
     <ClCompile Include="AttackSkill.cpp" />
     <ClCompile Include="Boxes.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="CameraActor.cpp" />
     <ClCompile Include="CameraComponent.cpp" />
     <ClCompile Include="CameraManager.cpp" />
@@ -198,6 +199,7 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClInclude Include="Armor.h" />
     <ClInclude Include="AttackSkill.h" />
     <ClInclude Include="Boxes.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="CameraActor.h" />
     <ClInclude Include="CameraComponent.h" />
     <ClInclude Include="CameraManager.h" />

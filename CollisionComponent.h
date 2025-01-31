@@ -15,7 +15,6 @@ enum LayerType
 
 	// =========== \\
 
-
 };
 
 class CollisionComponent : public Component
