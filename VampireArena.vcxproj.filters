@@ -127,6 +127,12 @@
     <Filter Include="Scripts\Managers\HUD">
       <UniqueIdentifier>{5d4c76eb-55ce-4943-ae13-e1b2876d29c1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="VampireSurvivor\Fight">
+      <UniqueIdentifier>{806fc620-8ad5-42d7-9ba5-e46bb8a3d14e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VampireSurvivor\other">
+      <UniqueIdentifier>{f6d720f8-bac5-4ad0-ae3e-8693f216312d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TextObject.cpp">
@@ -216,30 +222,6 @@
     <ClCompile Include="TriangleActor.cpp">
       <Filter>Scripts\Core\Actors\Shapes\Primitives</Filter>
     </ClCompile>
-    <ClCompile Include="Relic.cpp">
-      <Filter>VampireSurvivor</Filter>
-    </ClCompile>
-    <ClCompile Include="Armor.cpp">
-      <Filter>VampireSurvivor</Filter>
-    </ClCompile>
-    <ClCompile Include="AttackSkill.cpp">
-      <Filter>VampireSurvivor</Filter>
-    </ClCompile>
-    <ClCompile Include="Character.cpp">
-      <Filter>VampireSurvivor</Filter>
-    </ClCompile>
-    <ClCompile Include="CombatLevel.cpp">
-      <Filter>VampireSurvivor</Filter>
-    </ClCompile>
-    <ClCompile Include="Item.cpp">
-      <Filter>VampireSurvivor</Filter>
-    </ClCompile>
-    <ClCompile Include="Main.cpp">
-      <Filter>VampireSurvivor</Filter>
-    </ClCompile>
-    <ClCompile Include="Weapon.cpp">
-      <Filter>VampireSurvivor</Filter>
-    </ClCompile>
     <ClCompile Include="CameraManager.cpp">
       <Filter>Scripts\Managers\Camera</Filter>
     </ClCompile>
@@ -255,23 +237,47 @@
     <ClCompile Include="InputManager.cpp">
       <Filter>Scripts\Managers\Input</Filter>
     </ClCompile>
-    <ClCompile Include="VampireArena.cpp">
-      <Filter>VampireSurvivor</Filter>
-    </ClCompile>
     <ClCompile Include="Widget.cpp">
       <Filter>Scripts\Core\Actors\Widget</Filter>
     </ClCompile>
     <ClCompile Include="HUD.cpp">
       <Filter>Scripts\Managers\HUD</Filter>
     </ClCompile>
-    <ClCompile Include="Equippable.cpp">
-      <Filter>VampireSurvivor</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CombatLevel.cpp">
+      <Filter>VampireSurvivor\Fight</Filter>
+    </ClCompile>
+    <ClCompile Include="Armor.cpp">
+      <Filter>VampireSurvivor\other</Filter>
+    </ClCompile>
+    <ClCompile Include="AttackSkill.cpp">
+      <Filter>VampireSurvivor\other</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>VampireSurvivor\other</Filter>
+    </ClCompile>
+    <ClCompile Include="Equippable.cpp">
+      <Filter>VampireSurvivor\other</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>VampireSurvivor\other</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>VampireSurvivor\other</Filter>
+    </ClCompile>
+    <ClCompile Include="Relic.cpp">
+      <Filter>VampireSurvivor\other</Filter>
+    </ClCompile>
+    <ClCompile Include="VampireArena.cpp">
+      <Filter>VampireSurvivor\other</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>VampireSurvivor\other</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -389,27 +395,6 @@
     <ClInclude Include="SubclassOf.h">
       <Filter>Scripts\Resource Files</Filter>
     </ClInclude>
-    <ClInclude Include="Weapon.h">
-      <Filter>VampireSurvivor</Filter>
-    </ClInclude>
-    <ClInclude Include="Armor.h">
-      <Filter>VampireSurvivor</Filter>
-    </ClInclude>
-    <ClInclude Include="AttackSkill.h">
-      <Filter>VampireSurvivor</Filter>
-    </ClInclude>
-    <ClInclude Include="Character.h">
-      <Filter>VampireSurvivor</Filter>
-    </ClInclude>
-    <ClInclude Include="CombatLevel.h">
-      <Filter>VampireSurvivor</Filter>
-    </ClInclude>
-    <ClInclude Include="Item.h">
-      <Filter>VampireSurvivor</Filter>
-    </ClInclude>
-    <ClInclude Include="Relic.h">
-      <Filter>VampireSurvivor</Filter>
-    </ClInclude>
     <ClInclude Include="CameraManager.h">
       <Filter>Scripts\Managers\Camera</Filter>
     </ClInclude>
@@ -425,9 +410,6 @@
     <ClInclude Include="InputManager.h">
       <Filter>Scripts\Managers\Input</Filter>
     </ClInclude>
-    <ClInclude Include="VampireArena.h">
-      <Filter>VampireSurvivor</Filter>
-    </ClInclude>
     <ClInclude Include="RenderType.h">
       <Filter>Scripts\Resource Files\Enum</Filter>
     </ClInclude>
@@ -437,14 +419,38 @@
     <ClInclude Include="HUD.h">
       <Filter>Scripts\Managers\HUD</Filter>
     </ClInclude>
-    <ClInclude Include="Equippable.h">
-      <Filter>VampireSurvivor</Filter>
-    </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatLevel.h">
+      <Filter>VampireSurvivor\Fight</Filter>
+    </ClInclude>
+    <ClInclude Include="Armor.h">
+      <Filter>VampireSurvivor\other</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackSkill.h">
+      <Filter>VampireSurvivor\other</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>VampireSurvivor\other</Filter>
+    </ClInclude>
+    <ClInclude Include="Equippable.h">
+      <Filter>VampireSurvivor\other</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>VampireSurvivor\other</Filter>
+    </ClInclude>
+    <ClInclude Include="Relic.h">
+      <Filter>VampireSurvivor\other</Filter>
+    </ClInclude>
+    <ClInclude Include="VampireArena.h">
+      <Filter>VampireSurvivor\other</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>VampireSurvivor\other</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
