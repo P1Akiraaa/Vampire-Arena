@@ -37,8 +37,8 @@ void CombatLevel::GenerateMap()
 
 void CombatLevel::GenerateBackGround()
 {
-	MeshActor* _tile = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(tileSize.x * 50, tileSize.y * 27), prefix + "Floor", PNG, true/*, IntRect(Vector2i(), Vector2i(tileSize.x * 50, tileSize.y * 27))*/)));
-	_tile->GetMesh()->GetShape()->GetDrawable()->setTextureRect(IntRect(Vector2i(), Vector2i(tileSize.x * 50, tileSize.y * 27)));
+	MeshActor* _tile = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(tileSize.x * 50, tileSize.y * 27), prefix + "Floor", PNG, true, IntRect(Vector2i(), Vector2i(tileSize.x * 50, tileSize.y * 27)))));
+	//_tile->GetMesh()->GetShape()->GetDrawable()->setTextureRect(IntRect(Vector2i(), Vector2i(tileSize.x * 50, tileSize.y * 27)));
 	//_tile->GetMesh()->GetShape()->GetTexture().setRepeated(true);
 }
 
