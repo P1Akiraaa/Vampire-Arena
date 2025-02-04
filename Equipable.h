@@ -1,7 +1,6 @@
 #pragma once
 #include "Item.h"
 
-
 enum ElementType
 {
 	ET_SLASH = 1,

@@ -21,11 +21,11 @@ void VampireArena::Start()
 {
 	Super::Start();
 
-	Label* _label = M_HUD.CreateWidget<Label>("Vampire Arena", World);
+	/*Label* _label = M_HUD.CreateWidget<Label>("Vampire Arena", World);
 	_label->SetZOrder(1);
-	M_HUD.AddToViewport(_label);
+	M_HUD.AddToViewport(_label);*/
 
-    MeshActor* _background = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(1920.0f, 1080.0f), "background", JPG)));
+    MeshActor* _background = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(1920.0f, 1080.0f), "MainMenu_Background")));
     InitButton();
 }
 
@@ -47,8 +47,8 @@ void VampireArena::Stop()
 
 void VampireArena::InitButton()
 {
-    // TODO Change by Widget
-    VerticalBox _buttons = VerticalBox(100.0f, 105.0f, 55, 3, "Button", { 550.0f, 800.0f });
+    //TODO remove old menu
+    /*VerticalBox _buttons = VerticalBox(100.0f, 105.0f, 55, 3, "Button", { 550.0f, 800.0f });
     MeshActor* _mainBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(1000.0f, 800.0f), "Borders", JPG)));
     _mainBox->SetPosition(Vector2f(800.0f, 105.0f));
     HorizontalBox _itemBoxes = HorizontalBox(1274.0f, 200.0f, 20, 3, "OtherBorder", { 400.0f, 100.0f });
@@ -63,5 +63,10 @@ void VampireArena::InitButton()
     _charaBox->SetPosition(Vector2f(918.0f, 200.0f));
     _playerLifeBox->SetPosition(Vector2f(918.0f, 440.0f));
     _skillDescriptionBox->SetPosition(Vector2f(918.0f, 567.0f));
-    _skillBox->SetPosition(Vector2f(918.0f, 567.0f));
+    _skillBox->SetPosition(Vector2f(918.0f, 567.0f));*/
+
+    //TODO new menu
+    /*MeshActor* _mainBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(500.0f, 800.0f), "Character_Sheet")));
+    _mainBox->SetPosition(Vector2f(350.0f, 100.0f));
+    VerticalBox _buttons = VerticalBox(1100.0f, 215.0f, 120, 2, "Green_Button", { 450.0f, 600.0f });*/
 }

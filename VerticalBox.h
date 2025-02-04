@@ -1,24 +1,13 @@
 #pragma once
-#include "CoreMinimal.h"
-#include "Widget.h"
+#include "Box.h"
 
-using namespace UI;
-
-class VerticalBox
+class VerticalBox : public Box
 {
-	float posX;
-	float posY;
-	float spacing;
-	u_int marging;
-	u_int count;
-	string path;
-	Vector2f size;
 
 public:
-	VerticalBox(const float _posX, float _posY, const u_int _marging, const u_int& _count, const string& _path, const Vector2f& _size);
+	VerticalBox(const BoxData& _data);
 
 public:
-	u_int ComputeSpacing(float _sizeY, const u_int& _count, const Vector2f& _size);
-	void CreateVerticalBox(const float _posX, float _posY, const u_int _marging,const u_int& _count, const string& _path, const Vector2f _size, float _spacing);
+	void CreateVerticalBox(const BoxData& _data);
 };
 

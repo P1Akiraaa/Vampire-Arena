@@ -291,7 +291,7 @@
     <ClCompile Include="VerticalBox.cpp">
       <Filter>Scripts\Core\Actors\Widget\Boxes\VerticalBox</Filter>
     </ClCompile>
-    <ClCompile Include="Boxes.cpp">
+    <ClCompile Include="Box.cpp">
       <Filter>Scripts\Core\Actors\Widget\Boxes</Filter>
     </ClCompile>
     <ClCompile Include="Armor.cpp">
@@ -302,9 +302,6 @@
     </ClCompile>
     <ClCompile Include="Character.cpp">
       <Filter>VampireSurvivor\Character</Filter>
-    </ClCompile>
-    <ClCompile Include="Equippable.cpp">
-      <Filter>VampireSurvivor\Item\Equipable</Filter>
     </ClCompile>
     <ClCompile Include="Item.cpp">
       <Filter>VampireSurvivor\Item</Filter>
@@ -479,7 +476,7 @@
     <ClInclude Include="VerticalBox.h">
       <Filter>Scripts\Core\Actors\Widget\Boxes\VerticalBox</Filter>
     </ClInclude>
-    <ClInclude Include="Boxes.h">
+    <ClInclude Include="Box.h">
       <Filter>Scripts\Core\Actors\Widget\Boxes</Filter>
     </ClInclude>
     <ClInclude Include="Armor.h">
@@ -490,9 +487,6 @@
     </ClInclude>
     <ClInclude Include="Character.h">
       <Filter>VampireSurvivor\Character</Filter>
-    </ClInclude>
-    <ClInclude Include="Equippable.h">
-      <Filter>VampireSurvivor\Item\Equipable</Filter>
     </ClInclude>
     <ClInclude Include="Item.h">
       <Filter>VampireSurvivor\Item</Filter>
