@@ -21,15 +21,18 @@ public:
 
 private:
 	void GenerateMap();
+
 	void GenerateBackGround();
 	void GenerateAllDecorates();
 	void GenerateAllWalls();
 
 #pragma region GenerateWall
+
 	void GenerateHorizontalWall(const Vector2f& _position = Vector2f());
 	void GenerateVerticalWall(const Vector2f& _position = Vector2f());
 	void GenerateBreakWallRight(const Vector2f& _position = Vector2f());
 	void GenerateBreakWallLeft(const Vector2f& _position = Vector2f());
+
 #pragma endregion
 
 #pragma region GenerateBuild

@@ -82,23 +82,23 @@ void CombatLevel::GenerateAllWalls()
 	GenerateHome(Vector2f(350.0f, 100.0f));
 
 	Vector2f _verticalWallSize = Vector2f(21.0f, 86.0f);
-	Vector2f _startPos = Vector2f(665.0f, 0.0f);
+	Vector2f _startPos = Vector2f(657.0f, 0.0f);
 	for (u_int _index = 0; _index < 5; _index++)
 	{
 		GenerateVerticalWall(Vector2f((_verticalWallSize.x) - 1 + _startPos.x, _index * _verticalWallSize.y));
 	}
 
-	_startPos = Vector2f(686.0f, 407.0f);
+	_startPos = Vector2f(678.0f, 407.0f);
 	for (u_int _index = 0; _index < 2; _index++)
 	{
 		GenerateHorizontalWall(Vector2f(_startPos.x + (_horizontalWallSize.x - 1) * _index, _startPos.y));
 	}
 
-	_startPos = Vector2f(858.0f, 407.0f);
+	_startPos = Vector2f(848.0f, 406.0f);
 	GenerateBreakWallRight(_startPos);
 
 
-	_startPos = Vector2f(1300.0f, 407.0f);
+	_startPos = Vector2f(1301.0f, 406.0f);
 	GenerateBreakWallLeft(_startPos);
 
 	_startPos = Vector2f(1384.0f, 407.0f);
@@ -109,7 +109,7 @@ void CombatLevel::GenerateAllWalls()
 
 	GenerateBreakHome(Vector2f(1650.0f, 525.0f));
 
-	_startPos = Vector2f(665.0f, 700.0f);
+	_startPos = Vector2f(657.0f, 700.0f);
 	for (u_int _index = 0; _index < 4; _index++)
 	{
 		GenerateVerticalWall(Vector2f((_verticalWallSize.x - 1) + _startPos.x, _startPos.y + _index * _verticalWallSize.y));
