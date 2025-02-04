@@ -49,7 +49,7 @@ string TextureManager::GetExtensionNameByType(const TextureExtensionType& _textu
 
 
 void TextureManager::Load(ShapeObject* _shapeObject, const string& _path, const TextureExtensionType& _textureType,
-						  const IntRect& _rect,  const bool _isRepeated, const bool _smooth)
+						  const IntRect& _trim,  const bool _isRepeated, const IntRect& _rect, const bool _smooth)
 {
 	Texture& _texture = _shapeObject->GetTexture();
 
@@ -61,18 +61,19 @@ void TextureManager::Load(ShapeObject* _shapeObject, const string& _path, const 
 
 	// Init Texture
 	const string _texturePath = _path + "." + GetExtensionNameByType(_textureType);
-	LoadTexture(_texture, _texturePath, _rect);
+	LoadTexture(_texture, _texturePath, _trim);
 	_texture.setRepeated(_isRepeated);
 	_texture.setSmooth(_smooth);
 
 	// Apply Texture
 	SetTexture(_shapeObject->GetDrawable(), &_texture);
+	SetTextureRect(_shapeObject->GetDrawable(), _rect);
 }
 
-void TextureManager::Load(ShapeObject* _shapeObject, const string& _path, const IntRect& _rect,
-						  const TextureExtensionType& _textureType, const bool _isRepeated, const bool _isSmooth)
+void TextureManager::Load(ShapeObject* _shapeObject, const string& _path, const IntRect& _trim,
+						  const TextureExtensionType& _textureType, const bool _isRepeated, const IntRect& _rect, const bool _isSmooth)
 {
-	Load(_shapeObject, _path, _textureType, _rect, _isRepeated, _isSmooth);
+	Load(_shapeObject, _path, _textureType, _trim, _isRepeated, _rect, _isSmooth);
 }
 
 void TextureManager::SetTextureRect(Shape* _shape, const Vector2i& _start, const Vector2i& _size)

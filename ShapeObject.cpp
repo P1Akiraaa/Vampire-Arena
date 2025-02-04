@@ -38,11 +38,11 @@ ShapeObject::~ShapeObject()
 void ShapeObject::InitCircle(const CircleShapeData& _data)
 {
 	shape = new CircleShape(_data.radius, _data.pointCount);
-	M_TEXTURE.Load(this, _data.path, _data.rect);
+	M_TEXTURE.Load(this, _data.path, _data.trim);
 }
 
 void ShapeObject::InitRectangle(const RectangleShapeData& _data)
 {
 	shape = new RectangleShape(_data.size);
-	M_TEXTURE.Load(this, _data.path, _data.rect, _data.textureType, _data.isRepeated);
+	M_TEXTURE.Load(this, _data.path, _data.trim, _data.textureType, _data.isRepeated, _data.rect);
 }
