@@ -9,22 +9,10 @@
 
 struct CharacterData
 {
-	string name;
+	string name = "Laurent";
 	u_int gold = 0;
 	u_int fame = 0;
-	u_int speed = 100;
 	u_int lifeMax = 100;
-	u_int speed = 0;
-	u_int lifeMax = 100;
-	u_int speed = 0;
-	u_int lifeMax = 100;
-	u_int speed = 0;
-	u_int lifeMax = 100;
-	u_int speed = 0;
-	u_int lifeMax = 100;
-	u_int speed = 0;
-	u_int lifeMax = 100;
-	u_int speed = 0;
 	bool isFrenzied = false;
 	Weapon* weapon = nullptr;
 	Armor* armor = nullptr;
@@ -32,11 +20,11 @@ struct CharacterData
 	AttackSkill* attackSkill = nullptr;
 
 	CharacterData() = default;
-	FORCEINLINE LifeComponent* GetLifeComponent() const
-	{
-		return lifeComponent;
-	}
+	CharacterData(const string& _name, const u_int& _gold = 0, const u_int& _fame = 0, const bool _isFrenzied = false, 
+				  Weapon* _weapon = nullptr, Armor* _armor = nullptr, Relic* _relic = nullptr, AttackSkill* _skill = nullptr);
+};
 
+class Character : public MeshActor
 {
 	CharacterData characterData;
 	AnimationComponent* animation;
@@ -44,13 +32,11 @@ struct CharacterData
 
 public:
 
+	#pragma region Getters
 	FORCEINLINE LifeComponent* GetLifeComponent() const
 	{
 		return lifeComponent;
 	}
-
-	#pragma region Getters
-
 	FORCEINLINE CharacterData GetCharacterData() const
 	{
 		return characterData;
@@ -59,6 +45,7 @@ public:
 	{
 		characterData = _characterData;
 	}
+	#pragma endregion
 
 	#pragma region Gold
 
@@ -97,10 +84,8 @@ public:
 		}
 		FORCEINLINE void RemoveFame(const u_int& _amount)
 		{
-	int Attack();
-	int Defend();
-
-	#pragma endregion
+			characterData.fame = (characterData.fame - _amount < 0 ? 0 : characterData.fame - _amount);
+		}
 
 	#pragma endregion
 
@@ -109,8 +94,8 @@ public:
 	Character(const RectangleShapeData& _data, const CharacterData& _characterData);
 	~Character();
 public:
-	void Attack(const u_int _amount);
-	void Defend();
+	int Attack();
+	int Defend();
 
 	virtual void RenderMesh(RenderWindow& _window);
 	virtual void Tick(const float _deltaTime) override;

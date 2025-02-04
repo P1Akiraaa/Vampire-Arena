@@ -5,7 +5,7 @@ class LifeComponent : public Component
 {
 	u_int currentLife;
 	u_int maxlife;
-	bool isAlived;
+	bool isAlive;
 
 public:
 

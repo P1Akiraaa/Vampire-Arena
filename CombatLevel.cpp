@@ -16,7 +16,7 @@ void CombatLevel::Round()
 {
 	do
 	{
-		if (player->GetCharacterData().weapon->GetWeaponData().reach > enemy->GetCharacterData().weapon->GetWeaponData().reach)
+		if (player->GetCharacterData().weapon->GetReach() > enemy->GetCharacterData().weapon->GetReach())
 		{
 			player->Attack();
 			enemy->Defend();

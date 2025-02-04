@@ -37,3 +37,51 @@ Taux de drop des items
 Level Forge
 Level Saboteur
 Ranger les fichiers dans le projet
+
+
+
+
+
+
+
+
+Avancement projet actuel:
+
+Main menu : 85% -> A ajouter : Button, rajouter les assets, progress bar en temps réel pour les hp
+Assets : 75% (Trouver tous les audios et quelques textures manquantes)
+Combat: 50% -> A ajouter : Assets + fight system (régler le bug d'affichage) 
+Fight System: 20% ? (Possible rework du combat)
+
+Reward: 0% -> A ajouter : Tout
+Forge: 0% -> A ajouter : Tout
+Saboteur : 0% -> A ajouter : Tout
+
+
+
+
+
+
+
+
+
+
+
+Autres idées:
+
+Modifier le système de combat:
+	-> Petite map avec plusieurs vagues d'ennemis
+	-> Le joueur se déplace pour tuer les ennemis (attaques automatiques là où pointent la souris)
+	-> Les ennemis drop les gold et de potentielles capacité/power-up
+	-> Tous les 5 combats/vagues, option de choix de spell ou heal
+	-> Tous les 10 combat/vagues, combat de boss
+
+Main Menu:
+	-> Garder l'idée initiale dans le principe
+	-> Moins d'affiche (bouton de forge et de level, moins de chose dans le récap du joueur)
+
+Forge:
+	-> Idée d'amélioration garder
+	-> Amélioration uniquement de l'arme du joueur
+
+Saboteur:
+	-> Retirer si inutile

@@ -8,7 +8,7 @@ Character::Character(const RectangleShapeData& _data, const CharacterData& _char
 	lifeComponent = CreateComponent<LifeComponent>(100);
 }
 
-CharacterData::CharacterData(const string& _name, const u_int _gold, const u_int _fame,
+CharacterData::CharacterData(const string& _name, const u_int& _gold, const u_int& _fame,
 	const bool _isFrienzied,
 	Weapon* _weapon, Armor* _armor, Relic* _relic, AttackSkill* _attackSkill)
 {
@@ -59,5 +59,5 @@ void Character::Deconstruct()
 
 void Character::StartAnim()
 {
-	animation->StartAnimation();
+	//animation->StartAnimation();
 }
