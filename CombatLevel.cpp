@@ -5,7 +5,7 @@ CombatLevel::CombatLevel()
 {
 	prefix = "Map/";
 	tileSize = Vector2f(50.0f, 50.0f);
-	rateDecorate = 4;
+	rateDecorate = 30;
 }
 
 void CombatLevel::Start()
@@ -37,20 +37,23 @@ void CombatLevel::GenerateMap()
 
 void CombatLevel::GenerateBackGround()
 {
+	MeshActor* _tile = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(tileSize.x, tileSize.y), prefix + "map", PNG, true, IntRect(Vector2i(209, 241), Vector2i(86, 86)))));
+
 	// TODO check for isReapeted !!!!
-	for (u_int _row = 0; _row < 50; _row++)
+	/*for (u_int _row = 0; _row < 50; _row++)
 	{
 		for (u_int _column = 0; _column < 27; _column++)
 		{
 			MeshActor* _tile = Level::SpawnActor(MeshActor(RectangleShapeData(tileSize, prefix + "Floor")));
 			_tile->SetPosition(Vector2f(_row * tileSize.x, _column * tileSize.y));
 		}
-	}
+	}*/
 }
 
 void CombatLevel::GenerateAllDecorates()
 {
 	MeshActor* _decorates;
+	Vector2f _offset = Vector2f();
 	vector<function<void()>> _callBacks =
 	{
 		[&]() {_decorates = GetGold(); },
@@ -67,8 +70,10 @@ void CombatLevel::GenerateAllDecorates()
 			_index = GetRandomNumberInRange(0, rateDecorate);
 			if (_index < 5)
 			{
+				_offset.x = GetRandomNumberInRange(0, 40);
+				_offset.y = GetRandomNumberInRange(0, 40);
 				_callBacks[_index]();
-				_decorates->SetPosition(Vector2f(_row * tileSize.x, _column * tileSize.y));
+				_decorates->SetPosition(Vector2f(_row * tileSize.x, _column * tileSize.y) + _offset);
 			}
 		}
 	}

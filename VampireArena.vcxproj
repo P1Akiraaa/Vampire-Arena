@@ -183,6 +183,7 @@ xcopy /y /d "..\..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClCompile Include="SquareActor.cpp" />
     <ClCompile Include="TextObject.cpp" />
     <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="Torch.cpp" />
     <ClCompile Include="TriangleActor.cpp" />
     <ClCompile Include="Utilities.cpp" />
     <ClCompile Include="VampireArena.cpp" />
@@ -224,6 +225,7 @@ xcopy /y /d "..\..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClInclude Include="RenderType.h" />
     <ClInclude Include="Sample.h" />
     <ClInclude Include="SubclassOf.h" />
+    <ClInclude Include="Torch.h" />
     <ClInclude Include="TransformableViewer.h" />
     <ClInclude Include="TransformableModifier.h" />
     <ClInclude Include="Logger.h" />

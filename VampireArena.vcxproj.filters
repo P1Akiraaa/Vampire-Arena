@@ -133,6 +133,9 @@
     <Filter Include="VampireSurvivor\other">
       <UniqueIdentifier>{f6d720f8-bac5-4ad0-ae3e-8693f216312d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="VampireSurvivor\Fight\Torch">
+      <UniqueIdentifier>{7de22d3a-b6f0-4994-b8b5-e3e8d4b62462}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TextObject.cpp">
@@ -278,6 +281,9 @@
     </ClCompile>
     <ClCompile Include="Weapon.cpp">
       <Filter>VampireSurvivor\other</Filter>
+    </ClCompile>
+    <ClCompile Include="Torch.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -451,6 +457,9 @@
     </ClInclude>
     <ClInclude Include="Weapon.h">
       <Filter>VampireSurvivor\other</Filter>
+    </ClInclude>
+    <ClInclude Include="Torch.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
