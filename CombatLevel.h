@@ -45,6 +45,14 @@ private:
 	void GenerateStone(const pair<Vector2f, Vector2f>& _location);
 #pragma endregion
 
+#pragma region GetDecorate
+	MeshActor* GetGold() const;
+	MeshActor* GetAcid() const;
+	MeshActor* GetBarrel() const;
+	MeshActor* GetChest() const;
+	MeshActor* GetStone() const;
+#pragma endregion
+
 #pragma region GenerateTorch
 	void GenerateTorch();
 #pragma endregion

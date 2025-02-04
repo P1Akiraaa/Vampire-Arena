@@ -220,6 +220,82 @@ void CombatLevel::GenerateStone(const pair<Vector2f, Vector2f>& _location)
 	_wall->SetPosition(GetRandomPosition(_location));
 }
 
+
+
+MeshActor* CombatLevel::GetGold() const
+{
+	vector<pair<Vector2i, Vector2i>> _stoneData =
+	{
+		make_pair(Vector2i(24, 182), Vector2i(53, 36)),
+		make_pair(Vector2i(100, 174), Vector2i(95, 44)),
+		make_pair(Vector2i(214, 166), Vector2i(87, 52)),
+	};
+	pair<Vector2i, Vector2i> _stone = _stoneData[GetRandomNumberInRange(0, CAST(int, _stoneData.size() - 1))];
+	return Level::SpawnActor(MeshActor(RectangleShapeData(CAST(Vector2f, _stone.second), prefix + "decorates", PNG, false, IntRect(_stone.first, _stone.second))));
+}
+
+MeshActor* CombatLevel::GetAcid() const
+{
+	vector<pair<Vector2i, Vector2i>> _stoneData =
+	{
+		make_pair(Vector2i(323, 192), Vector2i(66, 28)),
+		make_pair(Vector2i(413, 195), Vector2i(69, 24)),
+		make_pair(Vector2i(509, 193), Vector2i(79, 26)),
+	};
+
+	pair<Vector2i, Vector2i> _stone = _stoneData[GetRandomNumberInRange(0, CAST(int, _stoneData.size() - 1))];
+
+	return Level::SpawnActor(MeshActor(RectangleShapeData(CAST(Vector2f, _stone.second), prefix + "decorates", PNG, false, IntRect(_stone.first, _stone.second))));
+}
+
+MeshActor* CombatLevel::GetBarrel() const
+{
+	vector<pair<Vector2i, Vector2i>> _stoneData =
+	{
+		make_pair(Vector2i(90, 109), Vector2i(43, 34)),
+		make_pair(Vector2i(153, 102), Vector2i(31, 38)),
+	};
+
+	pair<Vector2i, Vector2i> _stone = _stoneData[GetRandomNumberInRange(0, CAST(int, _stoneData.size() - 1))];
+
+	return Level::SpawnActor(MeshActor(RectangleShapeData(CAST(Vector2f, _stone.second), prefix + "decorates", PNG, false, IntRect(_stone.first, _stone.second))));
+}
+
+MeshActor* CombatLevel::GetChest() const
+{
+	vector<pair<Vector2i, Vector2i>> _stoneData =
+	{
+		make_pair(Vector2i(209, 108), Vector2i(43, 34)),
+		make_pair(Vector2i(278, 115), Vector2i(32, 26)),
+		make_pair(Vector2i(338, 109), Vector2i(44, 34)),
+		make_pair(Vector2i(403, 110), Vector2i(38, 33)),
+		make_pair(Vector2i(465, 113), Vector2i(44, 30)),
+		make_pair(Vector2i(537, 109), Vector2i(28, 34)),
+	};
+
+	pair<Vector2i, Vector2i> _stone = _stoneData[GetRandomNumberInRange(0, CAST(int, _stoneData.size() - 1))];
+
+	return Level::SpawnActor(MeshActor(RectangleShapeData(CAST(Vector2f, _stone.second), prefix + "decorates", PNG, false, IntRect(_stone.first, _stone.second))));
+}
+
+MeshActor* CombatLevel::GetStone() const
+{
+	vector<pair<Vector2i, Vector2i>> _stoneData =
+	{
+		make_pair(Vector2i(286, 59), Vector2i(23, 20)),
+		make_pair(Vector2i(329, 56), Vector2i(30, 22)),
+		make_pair(Vector2i(379, 57), Vector2i(18, 21)),
+		make_pair(Vector2i(417, 57), Vector2i(21, 21)),
+		make_pair(Vector2i(456, 54), Vector2i(22, 24)),
+	};
+
+	pair<Vector2i, Vector2i> _stone = _stoneData[GetRandomNumberInRange(0, CAST(int, _stoneData.size() - 1))];
+
+	return Level::SpawnActor(MeshActor(RectangleShapeData(CAST(Vector2f, _stone.second), prefix + "decorates", PNG, false, IntRect(_stone.first, _stone.second))));
+}
+
+
+
 // TODO Add FireAnimation
 void CombatLevel::GenerateTorch()
 {
