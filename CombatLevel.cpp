@@ -1,19 +1,21 @@
 #include "CombatLevel.h"
+#include "CameraManager.h"
 
 CombatLevel::CombatLevel()
 {
 	prefix = "Map/";
 	tileSize = Vector2f(50.0f, 50.0f);
+	rateDecorate = 4;
 }
 
 void CombatLevel::Start()
 {
+	GenerateMap();
 	Super::Start();
 }
 
 bool CombatLevel::Update()
 {
-	GenerateMap();
 	Super::Update();
 
 	return IsOver();
@@ -36,21 +38,40 @@ void CombatLevel::GenerateMap()
 void CombatLevel::GenerateBackGround()
 {
 	// TODO check for isReapeted !!!!
-
 	for (u_int _row = 0; _row < 50; _row++)
 	{
 		for (u_int _column = 0; _column < 27; _column++)
 		{
-			MeshActor* _tile = Level::SpawnActor(MeshActor(RectangleShapeData(tileSize, prefix + "Floor", PNG, true)));
+			MeshActor* _tile = Level::SpawnActor(MeshActor(RectangleShapeData(tileSize, prefix + "Floor")));
 			_tile->SetPosition(Vector2f(_row * tileSize.x, _column * tileSize.y));
-
-
 		}
 	}
 }
 
 void CombatLevel::GenerateAllDecorates()
 {
+	MeshActor* _decorates;
+	vector<function<void()>> _callBacks =
+	{
+		[&]() {_decorates = GetGold(); },
+		[&]() {_decorates = GetAcid(); },
+		[&]() {_decorates = GetBarrel(); },
+		[&]() {_decorates = GetChest(); },
+		[&]() {_decorates = GetStone(); },
+	};
+	u_int _index = 0;
+	for (u_int _row = 0; _row < 50; _row++)
+	{
+		for (u_int _column = 0; _column < 27; _column++)
+		{
+			_index = GetRandomNumberInRange(0, rateDecorate);
+			if (_index < 5)
+			{
+				_callBacks[_index]();
+				_decorates->SetPosition(Vector2f(_row * tileSize.x, _column * tileSize.y));
+			}
+		}
+	}
 }
 
 void CombatLevel::GenerateAllWalls()
@@ -98,7 +119,7 @@ void CombatLevel::GenerateAllWalls()
 	}
 }
 
-
+#pragma region GenerateWall
 void CombatLevel::GenerateHorizontalWall(const Vector2f& _position)
 {
 	MeshActor* _wall = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(86.0f, 84.0f), prefix + "map", PNG, false, IntRect(Vector2i(165, 24), Vector2i(86, 84)))));
@@ -107,7 +128,7 @@ void CombatLevel::GenerateHorizontalWall(const Vector2f& _position)
 
 void CombatLevel::GenerateVerticalWall(const Vector2f& _position)
 {
-	MeshActor* _wall = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(21.0f, 86.0f), prefix + "map", PNG, false, IntRect(Vector2i(316, 23), Vector2i(21, 86)))));
+	MeshActor* _wall = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(27.3f, 111.8f), prefix + "map", PNG, false, IntRect(Vector2i(316, 23), Vector2i(21, 86)))));
 	_wall->SetPosition(_position);
 }
 
@@ -122,7 +143,9 @@ void CombatLevel::GenerateBreakWallLeft(const Vector2f& _position)
 	MeshActor* _wall = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(84.0f, 85.0f), prefix + "map", PNG, false, IntRect(Vector2i(340, 132), Vector2i(84, 85)))));
 	_wall->SetPosition(_position);
 }
+#pragma endregion
 
+#pragma region GenerateBuild
 void CombatLevel::GenerateHome(const Vector2f& _position)
 {
 	MeshActor* _wall = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(300.8f, 284.8f), prefix + "map", PNG, false, IntRect(Vector2i(209, 360), Vector2i(188, 178)))));
@@ -140,9 +163,9 @@ void CombatLevel::GenerateDoor(const Vector2f& _position)
 	MeshActor* _wall = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(120.0f, 146.0f), prefix + "map", PNG, false, IntRect(Vector2i(48, 396), Vector2i(120, 146)))));
 	_wall->SetPosition(_position);
 }
+#pragma endregion
 
-
-// TODO Make RandomSpawnLocate
+#pragma region GenerateDecorate
 void CombatLevel::GenerateGold(const pair<Vector2f, Vector2f>& _location)
 {
 	vector<pair<Vector2i, Vector2i>> _stoneData =
@@ -219,9 +242,9 @@ void CombatLevel::GenerateStone(const pair<Vector2f, Vector2f>& _location)
 	MeshActor* _wall = Level::SpawnActor(MeshActor(RectangleShapeData(CAST(Vector2f,_stone.second), prefix + "decorates", PNG, false, IntRect(_stone.first, _stone.second))));
 	_wall->SetPosition(GetRandomPosition(_location));
 }
+#pragma endregion
 
-
-
+#pragma region GetDecorate
 MeshActor* CombatLevel::GetGold() const
 {
 	vector<pair<Vector2i, Vector2i>> _stoneData =
@@ -293,8 +316,7 @@ MeshActor* CombatLevel::GetStone() const
 
 	return Level::SpawnActor(MeshActor(RectangleShapeData(CAST(Vector2f, _stone.second), prefix + "decorates", PNG, false, IntRect(_stone.first, _stone.second))));
 }
-
-
+#pragma endregion
 
 // TODO Add FireAnimation
 void CombatLevel::GenerateTorch()
