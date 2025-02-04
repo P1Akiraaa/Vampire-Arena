@@ -47,7 +47,7 @@ void CombatLevel::GenerateBackGround()
 	}
 }
 
-void CombatLevel::GenerateDecorates()
+void CombatLevel::GenerateAllDecorates()
 {
 }
 
@@ -141,7 +141,7 @@ void CombatLevel::GenerateDoor(const Vector2f& _position)
 
 
 // TODO Make RandomSpawnLocate
-void CombatLevel::GenerateGold()
+void CombatLevel::GenerateGold(const pair<Vector2f, Vector2f>& _location)
 {
 	vector<pair<Vector2i, Vector2i>> _stoneData =
 	{
@@ -151,10 +151,10 @@ void CombatLevel::GenerateGold()
 	};
 	pair<Vector2i, Vector2i> _stone = _stoneData[GetRandomNumberInRange(0, CAST(int, _stoneData.size() - 1))];
 	MeshActor* _wall = Level::SpawnActor(MeshActor(RectangleShapeData(CAST(Vector2f, _stone.second), prefix + "decorates", PNG, false, IntRect(_stone.first, _stone.second))));
-	_wall->SetPosition(Vector2f());
+	_wall->SetPosition(GetRandomPosition(_location));
 }
 
-void CombatLevel::GenerateAcid()
+void CombatLevel::GenerateAcid(const pair<Vector2f, Vector2f>& _location)
 {
 	vector<pair<Vector2i, Vector2i>> _stoneData =
 	{
@@ -166,10 +166,10 @@ void CombatLevel::GenerateAcid()
 	pair<Vector2i, Vector2i> _stone = _stoneData[GetRandomNumberInRange(0, CAST(int, _stoneData.size() - 1))];
 
 	MeshActor* _wall = Level::SpawnActor(MeshActor(RectangleShapeData(CAST(Vector2f, _stone.second), prefix + "decorates", PNG, false, IntRect(_stone.first, _stone.second))));
-	_wall->SetPosition(Vector2f());
+	_wall->SetPosition(GetRandomPosition(_location));
 }
 
-void CombatLevel::GenerateBarrel()
+void CombatLevel::GenerateBarrel(const pair<Vector2f, Vector2f>& _location)
 {
 	vector<pair<Vector2i, Vector2i>> _stoneData =
 	{
@@ -180,10 +180,10 @@ void CombatLevel::GenerateBarrel()
 	pair<Vector2i, Vector2i> _stone = _stoneData[GetRandomNumberInRange(0, CAST(int, _stoneData.size() - 1))];
 
 	MeshActor* _wall = Level::SpawnActor(MeshActor(RectangleShapeData(CAST(Vector2f, _stone.second), prefix + "decorates", PNG, false, IntRect(_stone.first, _stone.second))));
-	_wall->SetPosition(Vector2f());
+	_wall->SetPosition(GetRandomPosition(_location));
 }
 
-void CombatLevel::GenerateChest()
+void CombatLevel::GenerateChest(const pair<Vector2f, Vector2f>& _location)
 {
 	vector<pair<Vector2i, Vector2i>> _stoneData =
 	{
@@ -198,10 +198,10 @@ void CombatLevel::GenerateChest()
 	pair<Vector2i, Vector2i> _stone = _stoneData[GetRandomNumberInRange(0, CAST(int, _stoneData.size() - 1))];
 
 	MeshActor* _wall = Level::SpawnActor(MeshActor(RectangleShapeData(CAST(Vector2f, _stone.second), prefix + "decorates", PNG, false, IntRect(_stone.first, _stone.second))));
-	_wall->SetPosition(Vector2f());
+	_wall->SetPosition(GetRandomPosition(_location));
 }
 
-void CombatLevel::GenerateStone()
+void CombatLevel::GenerateStone(const pair<Vector2f, Vector2f>& _location)
 {
 	vector<pair<Vector2i, Vector2i>> _stoneData =
 	{
@@ -215,7 +215,7 @@ void CombatLevel::GenerateStone()
 	pair<Vector2i, Vector2i> _stone = _stoneData[GetRandomNumberInRange(0, CAST(int, _stoneData.size() - 1))];
 
 	MeshActor* _wall = Level::SpawnActor(MeshActor(RectangleShapeData(CAST(Vector2f,_stone.second), prefix + "decorates", PNG, false, IntRect(_stone.first, _stone.second))));
-	_wall->SetPosition(Vector2f());
+	_wall->SetPosition(GetRandomPosition(_location));
 }
 
 // TODO Add FireAnimation
@@ -229,7 +229,14 @@ void CombatLevel::GenerateTorch()
 	};
 	pair<Vector2i, Vector2i> _stone = _stoneData[GetRandomNumberInRange(0, CAST(int, _stoneData.size() - 1))];
 	MeshActor* _wall = Level::SpawnActor(MeshActor(RectangleShapeData(CAST(Vector2f, _stone.second), prefix + "decorates", PNG, false, IntRect(_stone.first, _stone.second))));
-	_wall->SetPosition(Vector2f());
+	_wall->SetPosition(GetRandomPosition(_location));
 
 
+}
+
+Vector2f CombatLevel::GetRandomPosition(const pair<Vector2f, Vector2f>& _location)
+{
+	const float _x = GetRandomNumberInRange(_location.first.x, _location.second.x);
+	const float _y = GetRandomNumberInRange(_location.first.y, _location.second.y);
+	return Vector2f(_x, _y);
 }

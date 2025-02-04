@@ -21,7 +21,7 @@ public:
 private:
 	void GenerateMap();
 	void GenerateBackGround();
-	void GenerateDecorates();
+	void GenerateAllDecorates();
 	void GenerateAllWalls();
 
 #pragma region GenerateWall
@@ -38,15 +38,16 @@ private:
 #pragma endregion
 
 #pragma region GenerateDecorate
-	void GenerateGold();
-	void GenerateAcid();
-	void GenerateBarrel();
-	void GenerateChest();
-	void GenerateStone();
+	void GenerateGold(const pair<Vector2f, Vector2f>& _location);
+	void GenerateAcid(const pair<Vector2f, Vector2f>& _location);
+	void GenerateBarrel(const pair<Vector2f, Vector2f>& _location);
+	void GenerateChest(const pair<Vector2f, Vector2f>& _location);
+	void GenerateStone(const pair<Vector2f, Vector2f>& _location);
 #pragma endregion
 
 #pragma region GenerateTorch
 	void GenerateTorch();
 #pragma endregion
 
+	Vector2f GetRandomPosition(const pair<Vector2f, Vector2f>& _location);
 };
