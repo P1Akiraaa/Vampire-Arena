@@ -37,17 +37,9 @@ void CombatLevel::GenerateMap()
 
 void CombatLevel::GenerateBackGround()
 {
-	MeshActor* _tile = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(tileSize.x, tileSize.y), prefix + "map", PNG, true, IntRect(Vector2i(209, 241), Vector2i(86, 86)))));
-
-	// TODO check for isReapeted !!!!
-	/*for (u_int _row = 0; _row < 50; _row++)
-	{
-		for (u_int _column = 0; _column < 27; _column++)
-		{
-			MeshActor* _tile = Level::SpawnActor(MeshActor(RectangleShapeData(tileSize, prefix + "Floor")));
-			_tile->SetPosition(Vector2f(_row * tileSize.x, _column * tileSize.y));
-		}
-	}*/
+	MeshActor* _tile = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(tileSize.x * 50, tileSize.y * 27), prefix + "Floor", PNG, true/*, IntRect(Vector2i(), Vector2i(tileSize.x * 50, tileSize.y * 27))*/)));
+	_tile->GetMesh()->GetShape()->GetDrawable()->setTextureRect(IntRect(Vector2i(), Vector2i(tileSize.x * 50, tileSize.y * 27)));
+	//_tile->GetMesh()->GetShape()->GetTexture().setRepeated(true);
 }
 
 void CombatLevel::GenerateAllDecorates()
@@ -84,7 +76,7 @@ void CombatLevel::GenerateAllWalls()
 	Vector2f _horizontalWallSize = Vector2f(86.0f, 84.0f);
 	for (u_int _index = 0; _index < 8; _index++)
 	{
-		GenerateHorizontalWall(Vector2f(_index * _horizontalWallSize.x, 0.0f));
+		GenerateHorizontalWall(Vector2f(_index * (_horizontalWallSize.x - 1), 0.0f));
 	}
 
 	GenerateHome(Vector2f(350.0f, 100.0f));
@@ -93,13 +85,13 @@ void CombatLevel::GenerateAllWalls()
 	Vector2f _startPos = Vector2f(665.0f, 0.0f);
 	for (u_int _index = 0; _index < 5; _index++)
 	{
-		GenerateVerticalWall(Vector2f(_verticalWallSize.x + _startPos.x, _index * _verticalWallSize.y));
+		GenerateVerticalWall(Vector2f((_verticalWallSize.x) - 1 + _startPos.x, _index * _verticalWallSize.y));
 	}
 
 	_startPos = Vector2f(686.0f, 407.0f);
 	for (u_int _index = 0; _index < 2; _index++)
 	{
-		GenerateHorizontalWall(Vector2f(_startPos.x + _horizontalWallSize.x * _index, _startPos.y));
+		GenerateHorizontalWall(Vector2f(_startPos.x + (_horizontalWallSize.x - 1) * _index, _startPos.y));
 	}
 
 	_startPos = Vector2f(858.0f, 407.0f);
@@ -112,7 +104,7 @@ void CombatLevel::GenerateAllWalls()
 	_startPos = Vector2f(1384.0f, 407.0f);
 	for (u_int _index = 0; _index < 7; _index++)
 	{
-		GenerateHorizontalWall(Vector2f(_startPos.x + _horizontalWallSize.x * _index, _startPos.y));
+		GenerateHorizontalWall(Vector2f(_startPos.x + (_horizontalWallSize.x - 1) * _index, _startPos.y));
 	}
 
 	GenerateBreakHome(Vector2f(1650.0f, 525.0f));
@@ -120,7 +112,7 @@ void CombatLevel::GenerateAllWalls()
 	_startPos = Vector2f(665.0f, 700.0f);
 	for (u_int _index = 0; _index < 4; _index++)
 	{
-		GenerateVerticalWall(Vector2f(_verticalWallSize.x + _startPos.x, _startPos.y + _index * _verticalWallSize.y));
+		GenerateVerticalWall(Vector2f((_verticalWallSize.x - 1) + _startPos.x, _startPos.y + _index * _verticalWallSize.y));
 	}
 }
 

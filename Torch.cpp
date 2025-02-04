@@ -1,7 +1,7 @@
 #include "Torch.h"
 #include "Level.h"
 
-Torch::Torch()
+Torch::Torch() : MeshActor()
 {
 	prefix = "Map/";
 
@@ -13,4 +13,6 @@ Torch::Torch()
 	};
 	pair<Vector2i, Vector2i> _stone = _stoneData[GetRandomNumberInRange(0, CAST(int, _stoneData.size() - 1))];
 	torch = Level::SpawnActor(MeshActor(RectangleShapeData(CAST(Vector2f, _stone.second), prefix + "decorates", PNG, false, IntRect(_stone.first, _stone.second))));
+
+	//torch->AddChild();
 }
