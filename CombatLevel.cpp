@@ -29,7 +29,7 @@ void CombatLevel::Stop()
 void CombatLevel::GenerateMap()
 {
 	GenerateBackGround();
-	GenerateDecorates();
+	GenerateAllDecorates();
 	GenerateAllWalls();
 }
 
@@ -43,6 +43,8 @@ void CombatLevel::GenerateBackGround()
 		{
 			MeshActor* _tile = Level::SpawnActor(MeshActor(RectangleShapeData(tileSize, prefix + "Floor", PNG, true)));
 			_tile->SetPosition(Vector2f(_row * tileSize.x, _column * tileSize.y));
+
+
 		}
 	}
 }
@@ -229,7 +231,7 @@ void CombatLevel::GenerateTorch()
 	};
 	pair<Vector2i, Vector2i> _stone = _stoneData[GetRandomNumberInRange(0, CAST(int, _stoneData.size() - 1))];
 	MeshActor* _wall = Level::SpawnActor(MeshActor(RectangleShapeData(CAST(Vector2f, _stone.second), prefix + "decorates", PNG, false, IntRect(_stone.first, _stone.second))));
-	_wall->SetPosition(GetRandomPosition(_location));
+	_wall->SetPosition(Vector2f());
 
 
 }
