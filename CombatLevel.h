@@ -6,7 +6,6 @@
 class CombatLevel : public Game
 {
 	string prefix;
-
 	Vector2f tileSize;
 	u_int rateDecorate;
 

@@ -4,14 +4,16 @@ int Equipable::GetSize()
 {
 	if (equipableData.weight <= 2 && equipableData.weight > 1.3)
 	{
-		return ES_LARGE;
+		return static_cast<int>(ES_LARGE);
 	}
 	else if (equipableData.weight <= 1.3 && equipableData.weight > 0.66)
 	{
-		return ES_MEDIUM;
+		return  static_cast<int>(ES_MEDIUM);
 	}
 	else if (equipableData.weight <= 0.66 && equipableData.weight > 0)
 	{
-		return ES_LIGHT;
+		return  static_cast<int>(ES_LIGHT);
 	}
+
+	return 0;
 }

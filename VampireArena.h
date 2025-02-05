@@ -1,6 +1,7 @@
 #pragma once
 #include "Game.h"
-class VampireArena :   public Game
+
+class VampireArena : public Game
 {
 public:
 	VampireArena();
@@ -14,5 +15,6 @@ public:
 
 private:
 	void InitButton();
+	void InitBackground();
+	void InitWidget();
 };
-

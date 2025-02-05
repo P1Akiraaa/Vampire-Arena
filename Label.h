@@ -46,6 +46,10 @@ namespace UI
 			Super::Scale(_factor);
 			text->Scale(_factor);
 		}
+		FORCEINLINE virtual Vector2f GetSize() const override
+		{
+			return text->GetDrawable()->getLocalBounds().size;
+		}
 
 #pragma endregion
 

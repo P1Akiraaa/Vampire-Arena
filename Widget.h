@@ -25,7 +25,6 @@ namespace UI
 		int zOrder;
 
 	public:
-	public:
 		FORCEINLINE void SetVisibility(const VisibilityType& _visibility)
 		{
 			visibility = _visibility;
@@ -51,7 +50,7 @@ namespace UI
 
 		virtual void Construct() override;
 		virtual void Deconstruct() override;
-
+		virtual Vector2f GetSize() const = 0;
 		/// <summary>
 		/// Important pour faire des widgets on utilise les classes fille
 		/// étant donner que la classe est virtuelle pure

@@ -3,10 +3,13 @@
 
 class HorizontalBox : public Box
 {
-	
+	ShapeObject* shape;
 public:
+	HorizontalBox() = default;
 	HorizontalBox(const BoxData& _data);
 
 public:
-	void CreateHorizontalBox(const BoxData& _data);
+	virtual void Update() override;
+	
+	virtual void Render(RenderWindow& _window) override {};
 };

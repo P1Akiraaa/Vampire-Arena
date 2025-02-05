@@ -8,6 +8,7 @@ public:
 	VerticalBox(const BoxData& _data);
 
 public:
-	void CreateVerticalBox(const BoxData& _data);
-};
+	virtual void Update() override;
 
+	virtual void Render(RenderWindow& _window) override {};
+};
