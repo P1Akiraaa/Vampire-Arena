@@ -21,6 +21,7 @@ void VerticalBox::Update()
 		_widget->Scale(Vector2f(_newScale, _newScale));
 		_allElementsSize += _sizeY * _newScale;
 	}
+	_allElementsSize += data.spaceBetween * (_totalElement - 1);
 
 	float _currentY = (_totalSizeY - _allElementsSize) / 2.0f;
 	const float _x = GetPosition().x;
@@ -28,6 +29,6 @@ void VerticalBox::Update()
 	{
 		const float _computeSizeY = _widget->GetSize().y * _widget->GetScale().y;
 		_widget->SetPosition(Vector2f(_x, _computeSizeY));
-		_currentY += _computeSizeY;
+		_currentY += _computeSizeY + data.spaceBetween;
 	}
 }

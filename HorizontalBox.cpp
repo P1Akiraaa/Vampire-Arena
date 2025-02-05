@@ -23,12 +23,14 @@ void HorizontalBox::Update()
 		_allElementsSize += _sizeX * _newScale;
 	}
 
+	_allElementsSize += data.spaceBetween * (_totalElement - 1);
+
 	float _currentX = (_totalSizeX - _allElementsSize) / 2.0f;
 	const float _y = GetPosition().y;
 	for (Widget* _widget : widgets)
 	{
 		const float _computeSizeX = _widget->GetSize().x * _widget->GetScale().x;
 		_widget->SetPosition(Vector2f(_computeSizeX, _y));
-		_currentX += _computeSizeX;
+		_currentX += _computeSizeX + data.spaceBetween;
 	}
 }
