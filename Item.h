@@ -1,15 +1,6 @@
 #pragma once
 #include "Macro.h"
 
-enum EquipmentType
-{
-	ET_SLASHING,
-	ET_CRUSHING,
-	ET_PIERCING,
-
-	ET_COUNT
-};
-
 enum RarityType
 {
 	RT_JUNK = 1,
@@ -19,39 +10,33 @@ enum RarityType
 	RT_EPIC,
 	RT_LEGENDARY,
 	RT_SANGUINE,
+};
 
-	RT_COUNT
+struct ItemData
+{
+	string name = "Unknown";
+	string description = "Description";
+	Texture texture;
+	u_int upgradePrice = 0;
+	RarityType rarity = RT_JUNK;
 };
 
 class Item
 {
+
 protected:
-	string name;
-	string description;
-	int upgradePrice;
-	EquipmentType type;
-	RarityType rarity;
+	ItemData itemData;
 
 public:
-	FORCEINLINE string GetName() const
+	FORCEINLINE ItemData GetItemData() const
 	{
-		return name;
+		return itemData;
 	}
-	FORCEINLINE string GetDescription() const
+	FORCEINLINE void SetItemData(const ItemData& _itemData)
 	{
-		return description;
+		itemData = _itemData;
 	}
-	FORCEINLINE int GetUpgradePrice() const
-	{
-		return upgradePrice * rarity;
-	}
-	FORCEINLINE int GetRarity() const
-	{
-		return rarity;
-	}
-
-public:
-	Item() = default;
-	Item(const string& _name, const string& _description, const int _upgradePrice,
-		const EquipmentType& _type, const RarityType& _rarity);
+protected:
+	string GetRarityName();
+	string GetFlavorText();
 };

@@ -3,18 +3,29 @@
 
 class Armor : public Equipable
 {
-	int resistance;
 
-public:
-	FORCEINLINE int GetResistance() const
+public :
+	
+	inline double GetWeight() const
 	{
-		return resistance;
-	}
-	FORCEINLINE int GetWeight() const
-	{
-		return ((equipableStat / 2) * weight) * (static_cast<int>(rarity) * 0.1);
+		return WEIGHT;
 	}
 
-public:
-	Armor() = default;
+	inline double GetResistance() const
+	{
+		return ((RESISTANCE / 2) * WEIGHT) * (double(RARITY) * 0.1);
+	}
+
+public :
+	// Random
+	Armor();
+	// Copie
+	Armor(const Armor& _other);
+	// Manuel
+	Armor(ElementType _elementType, double _weight, RarityType _rarity = RT_JUNK);
+
+	string ComputeArmorName();
+	string ComputeArmorDescription();
+	Texture GetArmorTexture();
 };
+

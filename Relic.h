@@ -12,6 +12,8 @@ public:
 	}
 	
 public:
+	Relic(Relic&& _other);
+	Relic(Relic* _other);
 	Relic() = default;
 
 public:

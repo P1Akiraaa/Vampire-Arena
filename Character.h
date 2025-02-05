@@ -4,55 +4,102 @@
 #include "Relic.h"
 #include "Armor.h"
 #include "AttackSkill.h"
+#include "AnimationComponent.h"
+#include "LifeComponent.h"
+
+struct CharacterData
+{
+	string name = "Laurent";
+	u_int gold = 0;
+	u_int fame = 0;
+	u_int lifeMax = 100;
+	bool isFrenzied = false;
+	Weapon* weapon = nullptr;
+	Armor* armor = nullptr;
+	Relic* relic = nullptr;
+	AttackSkill* attackSkill = nullptr;
+
+	CharacterData() = default;
+	CharacterData(const string& _name, const u_int& _gold = 0, const u_int& _fame = 0, const bool _isFrenzied = false, 
+				  Weapon* _weapon = nullptr, Armor* _armor = nullptr, Relic* _relic = nullptr, AttackSkill* _skill = nullptr);
+};
 
 class Character : public MeshActor
 {
-	string name;
-	int life;
-	int lifeMax;
-	int speed;
-	bool isFrenzied;
-	Weapon* weapon;
-	Armor* armor;
-	Relic* relic;
-	AttackSkill* attackSkill;
-	//int fame; //LATER
+	CharacterData characterData;
+	AnimationComponent* animation;
+	LifeComponent* lifeComponent;
 
 public:
-	FORCEINLINE string GetName() const
+
+	#pragma region Getters
+	FORCEINLINE LifeComponent* GetLifeComponent() const
 	{
-		return name;
+		return lifeComponent;
 	}
-	FORCEINLINE int GetLife() const
+	FORCEINLINE CharacterData GetCharacterData() const
 	{
-		return life;
+		return characterData;
 	}
-	FORCEINLINE int GetSpeed() const
+	FORCEINLINE void SetCharacterData(const CharacterData& _characterData) 
 	{
-		return speed;
+		characterData = _characterData;
 	}
-	FORCEINLINE bool GetIsFrenzied() const
-	{
-		return isFrenzied;
-	}
-	FORCEINLINE Weapon* GetWeapon() const
-	{
-		return weapon;
-	}
-	FORCEINLINE Armor* GetArmor() const
-	{
-		return armor;
-	}
-	FORCEINLINE Relic* GetRelic() const
-	{
-		return relic;
-	}
+	#pragma endregion
+
+	#pragma region Gold
+
+		FORCEINLINE u_int GetGold() const
+		{
+			return characterData.gold;
+		}
+		FORCEINLINE void SetGold(const u_int& _gold)
+		{
+			characterData.gold = _gold;
+		}
+		FORCEINLINE void AddGold(const u_int& _amount)
+		{
+			characterData.gold += _amount;
+		}
+		FORCEINLINE void RemoveGold(const u_int& _amount)
+		{
+			characterData.gold = (characterData.gold - _amount < 0 ? 0 : characterData.gold - _amount);
+		}
+
+	#pragma endregion
+
+	#pragma region Fame
+
+		FORCEINLINE u_int GetFame() const
+		{
+			return characterData.fame;
+		}
+		FORCEINLINE void SetFame(const u_int& _fame)
+		{
+			characterData.fame = _fame;
+		}
+		FORCEINLINE void AddFame(const u_int& _amount)
+		{
+			characterData.fame += _amount;
+		}
+		FORCEINLINE void RemoveFame(const u_int& _amount)
+		{
+			characterData.fame = (characterData.fame - _amount < 0 ? 0 : characterData.fame - _amount);
+		}
+
+	#pragma endregion
 
 public:
 	Character() = default;
-	Character(const RectangleShapeData& _data, const string& _name = "Character");
-	virtual ~Character() = default;
+	Character(const RectangleShapeData& _data, const CharacterData& _characterData);
+	~Character();
 public:
-	virtual void Attack(const int _amount);
-	virtual void Defend();
+	int Attack();
+	int Defend();
+
+	virtual void RenderMesh(RenderWindow& _window);
+	virtual void Tick(const float _deltaTime) override;
+	virtual void Construct() override;
+	virtual void Deconstruct() override;
+	void StartAnim();
 };

@@ -1,10 +1,17 @@
 #include "Equipable.h"
 
-Equipable::Equipable(const string& _name, const string& _description, const int _upgradePrice, const EquipmentType& _type, const RarityType& _rarity,
-	const int _equipableStat, const double _weight, const ElementType& _element, const bool _isSaboted) : Item(_name, _description, _upgradePrice, _type, _rarity)
+int Equipable::GetSize()
 {
-	equipableStat = _equipableStat;
-	weight = _weight;
-	element = _element;
-	isSaboted = _isSaboted;
+	if (equipableData.weight <= 2 && equipableData.weight > 1.3)
+	{
+		return ES_LARGE;
+	}
+	else if (equipableData.weight <= 1.3 && equipableData.weight > 0.66)
+	{
+		return ES_MEDIUM;
+	}
+	else if (equipableData.weight <= 0.66 && equipableData.weight > 0)
+	{
+		return ES_LIGHT;
+	}
 }

@@ -3,28 +3,43 @@
 
 enum ElementType
 {
-	ET_SLASH,
+	ET_SLASH = 1,
 	ET_BLUNT,
 	ET_PIERCE,
 };
 
+enum EquipableSize
+{
+	ES_LIGHT = 1,
+	ES_MEDIUM,
+	ES_LARGE,
+};
+
+struct EquipableData
+{
+	bool saboted = false;
+	double equipableStat = 100;
+	double weight = 1;
+	ElementType element;
+	EquipableSize size;
+};
+
 class Equipable : public Item
 {
+
 protected:
-	bool isSaboted;
-	int equipableStat;
-	int weight;
-	ElementType element;
+	EquipableData equipableData;
 
 public:
 
-	FORCEINLINE bool GetIsSaboted() const
+	FORCEINLINE EquipableData GetEquipableData() const
 	{
-		return isSaboted;
+		return equipableData;
 	}
-
-public:
-	Equipable() = default;
-	Equipable(const string& _name, const string& _description, const int _upgradePrice, const EquipmentType& _type, const RarityType& _rarity,
-		const int _equipableStat, const double _weight, const ElementType& _element, const bool _isSaboted = false);
+	FORCEINLINE void SetEquipableData(const EquipableData& _equipableData)
+	{
+		equipableData = _equipableData;
+	}
+	
+	int GetSize();
 };

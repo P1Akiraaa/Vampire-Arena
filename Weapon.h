@@ -3,21 +3,30 @@
 
 class Weapon : public Equipable
 {
-	int reach;
-	int attackValue;
-	int attackSpeed;
 
-public:
-	FORCEINLINE int GetReach() const
+public :
+
+	inline double GetReach() const
 	{
-		return reach;
+		return REACH;
 	}
-	FORCEINLINE double GetAttackValue() const
+
+	inline double GetAttackValue() const
 	{
-		return ((equipableStat * weight) * (1 + (static_cast<int>(rarity) * 0.1)) * 0.9);
+		return ((ATTACK * WEIGHT) * (1 + (double(RARITY) * 0.1)) * 0.9);
 	}
-	FORCEINLINE int GetAttackSpeed() const
-	{
-		return attackSpeed;
-	}
+
+public :
+	// Random
+	Weapon();
+	// Copie
+	Weapon(const Weapon& _other);
+	// Manuel
+	Weapon(ElementType _elementType, double _weight = 1, RarityType _rarity = RT_JUNK);
+
+private:
+	string ComputeWeaponName();
+	string ComputeWeaponDescription();
+	Texture GetWeaponTexture();
 };
+

@@ -48,4 +48,4 @@ namespace Input
 	{
 		_window.close();
 	}
-};
+}

@@ -41,6 +41,7 @@ namespace Input
 			return false;
 		}
 	};
+
 	struct ClickData
 	{
 		Clicked click;
@@ -60,7 +61,6 @@ namespace Input
 		}
 
 	};
-
 	class InputManager : public Singleton<InputManager>
 	{
 		vector<InputData> inputsData;
@@ -75,4 +75,4 @@ namespace Input
 	private:
 		void CloseWindow(RenderWindow& _window);
 	};
-};
+}
