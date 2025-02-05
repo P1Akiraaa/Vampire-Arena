@@ -5,15 +5,13 @@
 
 class CombatLevel : public Game
 {
-	MeshActor* backGround;
-	Character* player;
-	Character* enemy;
-	u_int round;
-	Timer<Seconds>* roundTimer;
+	string prefix;
+
+	Vector2f tileSize;
+	u_int rateDecorate;
 
 public:
-	CombatLevel() = default;
-	CombatLevel(Character* _player, Character* _enemy);
+	CombatLevel();
 
 public:
 	virtual void Start() override;
@@ -21,7 +19,45 @@ public:
 	virtual void Stop() override;
 
 private:
-	void Round();
-	void CombatFinished();
-	
+	void GenerateMap();
+	void GenerateBackGround();
+	void GenerateAllDecorates();
+	void GenerateAllWalls();
+
+#pragma region GenerateWall
+
+	void GenerateHorizontalWall(const Vector2f& _position = Vector2f());
+	void GenerateVerticalWall(const Vector2f& _position = Vector2f());
+	void GenerateBreakWallRight(const Vector2f& _position = Vector2f());
+	void GenerateBreakWallLeft(const Vector2f& _position = Vector2f());
+
+#pragma endregion
+
+#pragma region GenerateBuild
+	void GenerateHome(const Vector2f& _position = Vector2f());
+	void GenerateBreakHome(const Vector2f& _position = Vector2f());
+	void GenerateDoor(const Vector2f& _position = Vector2f());
+#pragma endregion
+
+#pragma region GenerateDecorate
+	void GenerateGold(const pair<Vector2f, Vector2f>& _location);
+	void GenerateAcid(const pair<Vector2f, Vector2f>& _location);
+	void GenerateBarrel(const pair<Vector2f, Vector2f>& _location);
+	void GenerateChest(const pair<Vector2f, Vector2f>& _location);
+	void GenerateStone(const pair<Vector2f, Vector2f>& _location);
+#pragma endregion
+
+#pragma region GetDecorate
+	MeshActor* GetGold() const;
+	MeshActor* GetAcid() const;
+	MeshActor* GetBarrel() const;
+	MeshActor* GetChest() const;
+	MeshActor* GetStone() const;
+#pragma endregion
+
+#pragma region GenerateTorch
+	void GenerateTorch();
+#pragma endregion
+
+	Vector2f GetRandomPosition(const pair<Vector2f, Vector2f>& _location);
 };

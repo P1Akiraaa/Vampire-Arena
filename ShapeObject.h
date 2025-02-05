@@ -20,15 +20,15 @@ struct CircleShapeData
 {
 	float radius;
 	string path;
-	IntRect rect;
+	IntRect trim;
 	size_t pointCount;
 
-	CircleShapeData(const float _radius, const string& _path, const IntRect& _rect,
+	CircleShapeData(const float _radius, const string& _path, const IntRect& _trim,
 					const size_t& _pointCount)
 	{
 		radius = _radius;
 		path = _path;
-		rect = _rect;
+		trim = _trim;
 		pointCount = _pointCount;
 	}
 
@@ -36,7 +36,7 @@ struct CircleShapeData
 	{
 		radius = _other.radius;
 		path = _other.path;
-		rect = _other.rect;
+		trim = _other.trim;
 		pointCount = _other.pointCount;
 
 		return *this;
@@ -47,16 +47,18 @@ struct RectangleShapeData
 {
 	Vector2f size;
 	string path;
+	IntRect trim;
 	IntRect rect;
 	TextureExtensionType textureType;
 	bool isRepeated;
 
 	RectangleShapeData(const Vector2f& _size, const string& _path = "", const TextureExtensionType& _textureType = PNG,
-					   const bool _isRepeated = false, const IntRect& _rect = IntRect())
+					   const bool _isRepeated = false, const IntRect& _rect = IntRect(), const IntRect& _trim = IntRect())
 	{
 		size = _size;
 		path = _path;
 		rect = _rect;
+		trim = _trim;
 		textureType = _textureType;
 		isRepeated = _isRepeated;
 	}

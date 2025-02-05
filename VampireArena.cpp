@@ -69,4 +69,5 @@ void VampireArena::InitButton()
     /*MeshActor* _mainBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(500.0f, 800.0f), "Character_Sheet")));
     _mainBox->SetPosition(Vector2f(350.0f, 100.0f));
     VerticalBox _buttons = VerticalBox(1100.0f, 215.0f, 120, 2, "Green_Button", { 450.0f, 600.0f });*/
+    
 }

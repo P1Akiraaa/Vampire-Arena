@@ -1,5 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "HorizontalBox.h"
+#include "VerticalBox.h"
 
 class Game
 {

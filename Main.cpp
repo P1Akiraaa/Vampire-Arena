@@ -31,7 +31,7 @@ int main()
         _window.display();
     }*/
 
-    M_GAME.Launch(new VampireArena());
+    M_GAME.Launch(new CombatLevel());
 
     return EXIT_SUCCESS;
 }
