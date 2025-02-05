@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Widget.h"
+#include "HUD.h"
 
 using namespace UI;
 
@@ -29,11 +30,17 @@ protected:
 	BoxData data;
 
 public:
+	FORCEINLINE void AddWidget(Widget* _widget, const int _zOrder)
+	{
+
+	}
 	FORCEINLINE void AddWidget(Widget* _widget)
 	{
 		widgets.push_back(_widget);
 		AddChild(_widget, AT_KEEP_RELATIVE);
-		Update();
+		M_HUD.AddToViewport(_widget);
+		//Update();
+
 	}
 	FORCEINLINE void RemoveWidget(Widget* _widget)
 	{
@@ -47,6 +54,7 @@ public:
 			}
 		}
 		RemoveChild(_widget);
+		M_HUD.RemoveFromViewport(_widget);
 		Update();
 	}
 
@@ -87,7 +95,7 @@ public:
 	{
 		Super::Scale(_factor);
 	}
-	FORCEINLINE virtual void Rotate(const Angle& _angle)
+	FORCEINLINE virtual void Rotate(const Angle& _angle) override
 	{
 		Super::Rotate(_angle);
 	}
