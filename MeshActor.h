@@ -3,15 +3,58 @@
 #include "MeshComponent.h"
 #include "TextureManager.h"
 
+class CollisionComponent;
+
 class MeshActor : public Actor
 {
 	MeshComponent* mesh;
 	u_int renderMeshToken;
 
+protected:
+	CollisionComponent* collision;
+
 public:
+	FORCEINLINE Vector2f GetForwardVector() const
+	{
+		const Angle& _angle = GetRotation();
+		const float _radians = _angle.asRadians();
+		return Vector2f(cos(_radians), sin(_radians));
+	}
+	FORCEINLINE Vector2f GetDownVector() const
+	{
+		const Angle& _angle = GetRotation();
+		const float _radians = _angle.asRadians();
+		return Vector2f(sin(_radians), -cos(_radians));
+	}
+	FORCEINLINE Vector2f GetRightVector() const
+	{
+		const Angle& _angle = GetRotation();
+		const float _radians = _angle.asRadians();
+		return Vector2f(cos(_radians), -sin(_radians));
+	}
+	FORCEINLINE Vector2f GetLeftVector() const
+	{
+		const Angle& _angle = GetRotation();
+		const float _radians = _angle.asRadians();
+		return Vector2f(-cos(_radians), sin(_radians));
+	}
+	FORCEINLINE Vector2f GetBackVector() const
+	{
+		const Angle& _angle = GetRotation();
+		const float _radians = _angle.asRadians();
+		return Vector2f(-cos(_radians), -sin(_radians));
+	}
 	FORCEINLINE MeshComponent* GetMesh() const
 	{
 		return mesh;
+	}
+	FORCEINLINE Shape* GetDrawable() const
+	{
+		return mesh->GetShape()->GetDrawable();
+	}
+	FORCEINLINE FloatRect GetHitbox() const
+	{
+		return mesh->GetShape()->GetDrawable()->getGlobalBounds();
 	}
 	FORCEINLINE void SetTextureRect(const Vector2i& _start, const Vector2i& _size)
 	{

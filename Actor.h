@@ -4,6 +4,10 @@
 #include "TransformableViewer.h"
 #include "Component.h"
 #include "RootComponent.h"
+#include "Layer.h"
+
+struct CollisionData;
+using namespace Layer;
 
 class Actor : public Core, public ITransformableModifier, public ITransformableViewer
 {
@@ -18,6 +22,7 @@ class Actor : public Core, public ITransformableModifier, public ITransformableV
 	set<Actor*> children;
 protected:
 	float lifeSpan;
+	LayerType layer;
 
 protected:
 	template <typename Type, typename ...Args, IS_BASE_OF(Component, Type)>
@@ -39,6 +44,10 @@ public:
 	{
 		isToDelete = true;
 	}
+	FORCEINLINE void SetLayer(LayerType _layer)
+	{
+		layer = _layer;
+	}
 	FORCEINLINE bool IsToDelete() const
 	{
 		return isToDelete;
@@ -54,6 +63,10 @@ public:
 	FORCEINLINE string GetDisplayName() const
 	{
 		return displayName;
+	}
+	FORCEINLINE LayerType GetLayer() const
+	{
+		return layer;
 	}
 
 #pragma region Children
@@ -278,6 +291,13 @@ public:
 
 		return nullptr;
 	}
+
+#pragma endregion
+#pragma region Collision
+
+	virtual void CollisionEnter(const CollisionData& _data) {}
+	virtual void CollisionUpdate(const CollisionData& _data) {}
+	virtual void CollisionExit(const CollisionData& _data) {}
 
 #pragma endregion
 };

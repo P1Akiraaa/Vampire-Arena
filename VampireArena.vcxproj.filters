@@ -169,6 +169,12 @@
     <Filter Include="Scripts\Managers\Input\ActionMap">
       <UniqueIdentifier>{0fed29ac-f82a-40ec-b009-5cae165c2518}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scripts\Managers\Collision">
+      <UniqueIdentifier>{bd17c00a-9602-4eac-b440-6aaba83be4b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Resource Files\Layer">
+      <UniqueIdentifier>{21c3a41c-127b-43d0-9f27-afac3ed99a3a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TextObject.cpp">
@@ -338,6 +344,12 @@
     </ClCompile>
     <ClCompile Include="ActionMap.cpp">
       <Filter>Scripts\Managers\Input\ActionMap</Filter>
+    </ClCompile>
+    <ClCompile Include="Layer.cpp">
+      <Filter>Scripts\Resource Files\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>Scripts\Managers\Collision</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -535,6 +547,12 @@
     </ClInclude>
     <ClInclude Include="ActionMap.h">
       <Filter>Scripts\Managers\Input\ActionMap</Filter>
+    </ClInclude>
+    <ClInclude Include="Layer.h">
+      <Filter>Scripts\Resource Files\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>Scripts\Managers\Collision</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
