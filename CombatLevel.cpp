@@ -1,5 +1,9 @@
 #include "CombatLevel.h"
 #include "CameraManager.h"
+#include "TrianglePointer.h"
+#include "InputManager.h"
+
+using namespace Input;
 
 CombatLevel::CombatLevel()
 {
@@ -12,6 +16,12 @@ void CombatLevel::Start()
 {
 	GenerateMap();
 	Super::Start();
+	
+	SUBJECT = Level::SpawnActor(TrianglePointer());
+	SUBJECT->SetOriginAtMiddle();
+	SUBJECT->SetPosition(Vector2f(window.getSize()) / 2.0f);
+
+
 }
 
 bool CombatLevel::Update()

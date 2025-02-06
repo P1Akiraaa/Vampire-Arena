@@ -158,7 +158,12 @@ public:
 #pragma region Transformable
 
 #pragma region Viewer
-
+	FORCEINLINE Vector2f GetForwardVector() const
+	{
+		const Angle& _angle = GetRotation();
+		const float _radians = _angle.asRadians();
+		return Vector2f(cos(_radians), sin(_radians));
+	}
 	FORCEINLINE virtual Vector2f GetOrigin() const override
 	{
 		return root->GetOrigin();

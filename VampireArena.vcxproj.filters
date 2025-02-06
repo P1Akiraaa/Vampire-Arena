@@ -169,6 +169,9 @@
     <Filter Include="Scripts\Managers\Input\ActionMap">
       <UniqueIdentifier>{0fed29ac-f82a-40ec-b009-5cae165c2518}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scripts\Core\Components\Movement">
+      <UniqueIdentifier>{c2278d8c-285d-4f5d-930b-a64bbaaf04a9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TextObject.cpp">
@@ -338,6 +341,18 @@
     </ClCompile>
     <ClCompile Include="ActionMap.cpp">
       <Filter>Scripts\Managers\Input\ActionMap</Filter>
+    </ClCompile>
+    <ClCompile Include="RotateToTargetComponent.cpp">
+      <Filter>Scripts\Core\Components\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="MovementComponent.cpp">
+      <Filter>Scripts\Core\Components\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="TrianglePointer.cpp">
+      <Filter>VampireSurvivor</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMovement.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -535,6 +550,18 @@
     </ClInclude>
     <ClInclude Include="ActionMap.h">
       <Filter>Scripts\Managers\Input\ActionMap</Filter>
+    </ClInclude>
+    <ClInclude Include="RotateToTargetComponent.h">
+      <Filter>Scripts\Core\Components\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="MovementComponent.h">
+      <Filter>Scripts\Core\Components\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="TrianglePointer.h">
+      <Filter>VampireSurvivor</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMovement.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

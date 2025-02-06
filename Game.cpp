@@ -3,8 +3,9 @@
 #include "CameraManager.h"
 #include "TimerManager.h"
 #include "CombatLevel.h"
+#include "InputManager.h"
 
-
+using namespace Input;
 using namespace Camera;
 
 Game::Game()
@@ -23,13 +24,7 @@ bool Game::Update()
     TM_Seconds& _timer = M_TIMER;
     _timer.Update();
 
-    while (const optional _event = window.pollEvent())
-    {
-        if (_event->is<Event::Closed>())
-        {
-            window.close();
-        }
-    }
+    M_INPUT.Update(window);
 
     const float _deltaTime = _timer.GetDeltaTime().asSeconds();
     M_ACTOR.Tick(_deltaTime);

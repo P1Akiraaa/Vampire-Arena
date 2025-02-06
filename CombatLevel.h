@@ -9,6 +9,8 @@ class CombatLevel : public Game
 	Vector2f tileSize;
 	u_int rateDecorate;
 
+	class TrianglePointer* SUBJECT;
+
 public:
 	CombatLevel();
 

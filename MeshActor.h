@@ -72,8 +72,6 @@ public:
 	MeshActor(const RectangleShapeData& _data, const string& _name = "MeshActor");
 	MeshActor(const MeshActor& _other);
 
-	
-
 protected:
 	void RenderMesh(RenderWindow& _window);
 

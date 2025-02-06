@@ -126,8 +126,6 @@ namespace Input
 		SensorChanged,			//ValueType = Digital
 	};
 
-
-
 	enum ControllerAxesType
 	{
 		LeftStickX,
@@ -135,7 +133,6 @@ namespace Input
 		RightStickX,
 		RightStickY,
 	};
-
 
 	enum ValueType
 	{
