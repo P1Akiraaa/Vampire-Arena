@@ -74,7 +74,7 @@ private:
 		const vector<function<Vector2f()>>& _computePosition =
 		{
 			// Keep the child�s relative position to the parent.
-			[&]() { return _child->GetPosition() - GetPosition(); },
+			[&]() { return _child->GetPosition() + GetPosition(); },
 			// Keep the child�s world position.
 			[&]() { return _child->GetPosition(); },
 			// Snap the child to the parent's position.
@@ -89,7 +89,7 @@ private:
 		const vector<function<Angle()>>& _computeRotation =
 		{
 			// Keep the child�s relative rotation to the parent.
-			[&]() { return _child->GetRotation() - GetRotation(); },
+			[&]() { return _child->GetRotation() + GetRotation(); },
 			// Keep the child�s world rotation.
 			[&]() { return _child->GetRotation(); },
 			// Snap the child to the parent's rotation.
@@ -104,7 +104,7 @@ private:
 		const vector<function<Vector2f()>>& _computeScale =
 		{
 			// Keep the child�s relative scale to the parent.
-			[&]() { return _child->GetScale() - GetScale(); },
+			[&]() { return Vector2f(_child->GetScale().x * GetScale().x, _child->GetScale().y * GetScale().y) ; },
 			// Keep the child�s world scale.
 			[&]() { return _child->GetScale(); },
 			// Snap the child to the parent's scale.

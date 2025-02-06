@@ -22,7 +22,7 @@ void VampireArena::Start()
 	Super::Start();
 
 	InitBackground();
-	InitWidget();
+	//InitWidget();
 	InitButton();   
 }
 
@@ -45,13 +45,15 @@ void VampireArena::Stop()
 void VampireArena::InitButton()
 {
     //TODO new menu
-	HorizontalBox* _box = M_HUD.CreateWidget<HorizontalBox>(BoxData(0, Vector2f(600.0f, 400.0f)));
-	Label* _label = M_HUD.CreateWidget<Label>("test", World, "Bloody_Gothic_Empire", TTF);
-	_box->SetZOrder(1);
-	M_HUD.AddToViewport(_box);
-	_label->SetZOrder(2);
-	_box->AddWidget(_label);
+	HorizontalBox* _box = M_HUD.CreateWidget<HorizontalBox>(BoxData(0.0f, Vector2f(50.0f, 20.0f)));
 	_box->SetPosition(Vector2f(500.0f, 500.0f));
+	Label* _label = M_HUD.CreateWidget<Label>("test", World, "Bloody_Gothic_Empire", TTF);
+	/*_box->SetZOrder(1);
+	M_HUD.AddToViewport(_box);*/
+	_label->SetZOrder(1);
+	_box->AddWidget(_label);
+
+
     /*MeshActor* _mainBox = Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(500.0f, 800.0f), "Character_Sheet")));
     _mainBox->SetPosition(Vector2f(350.0f, 100.0f));*/
 }

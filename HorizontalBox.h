@@ -4,6 +4,7 @@
 class HorizontalBox : public Box
 {
 	ShapeObject* shape;
+
 public:
 	HorizontalBox() = default;
 	HorizontalBox(const BoxData& _data);
