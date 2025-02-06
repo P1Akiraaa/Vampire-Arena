@@ -163,6 +163,12 @@
     <Filter Include="Scripts\Core\Components\Life">
       <UniqueIdentifier>{eb6807f0-1105-4d2d-9ebb-94cb2a958257}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scripts\Managers\Input\Action">
+      <UniqueIdentifier>{fd91308d-9791-47e6-b872-51eff803c4e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Managers\Input\ActionMap">
+      <UniqueIdentifier>{0fed29ac-f82a-40ec-b009-5cae165c2518}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TextObject.cpp">
@@ -322,10 +328,16 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Fire.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>VampireSurvivor</Filter>
     </ClCompile>
     <ClCompile Include="Torch.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>VampireSurvivor</Filter>
+    </ClCompile>
+    <ClCompile Include="Action.cpp">
+      <Filter>Scripts\Managers\Input\Action</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionMap.cpp">
+      <Filter>Scripts\Managers\Input\ActionMap</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -517,6 +529,12 @@
     </ClInclude>
     <ClInclude Include="Torch.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Action.h">
+      <Filter>Scripts\Managers\Input\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionMap.h">
+      <Filter>Scripts\Managers\Input\ActionMap</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,51 +1,54 @@
 #include "InputManager.h"
 
-namespace Input
+Input::InputManager::InputManager()
 {
-	void InputManager::ConsumeInput(RenderWindow& _window)
-	{
-		while (const optional _event = _window.pollEvent())
-		{
-			if (_event->is<Close>())
-			{
-				_window.close();
-			}
+    actionsMaps = map<string, ActionMap*>();
+    isKeyHolding = false;
+    isButtonHolding = false;
+}
 
-			else if (const KeyPressed* _key = _event->getIf<KeyPressed>())
-			{
-				for (InputData& _inputData : inputsData)
-				{
-					if (_inputData.TryToExecute(_key)) break;
-				}
-			}
+Input::InputManager::~InputManager()
+{
+    for (const pair<string, ActionMap*>& _pair : actionsMaps)
+    {
+        delete _pair.second;
+    }
+}
 
-			else if (const Click* _key = _event->getIf<Click>())
-			{
-				for (ClickData& _clickData : clickData)
-				{
-					if (_clickData.TryToExecute(_key)) break;
-				}
-			}
-		}
-	}
+void Input::InputManager::UpdateActionMaps(const EventInfo& _event)
+{
+    for (const pair<string, ActionMap*>& _map : actionsMaps)
+    {
+        _map.second->Update(_event);
+    }
+}
 
-	void InputManager::BindAction(const function<void()>& _callback, const Code& _code)
-	{
-		inputsData.push_back(InputData(_callback, { _code }));
-	}
+void Input::InputManager::Update(RenderWindow& _window)
+{
+    while (const EventInfo& _event = _window.pollEvent())
+    {
+        if (_event->is<Event::Closed>())
+        {
+            _window.close();
+            return;
+        }
 
-	void InputManager::BindAction(const function<void()>& _callback, const Clicked& _click)
-	{
-		clickData.push_back(ClickData(_callback, &_click));
-	}
-
-	void InputManager::BindAction(const function<void()>& _callback, const vector<Code>& _codes)
-	{
-		inputsData.push_back(InputData(_callback, _codes, _codes.empty()));
-	}
-
-	void InputManager::CloseWindow(RenderWindow& _window)
-	{
-		_window.close();
-	}
+        UpdateActionMaps(_event);
+        if (_event->is<PressedKey>() && !isKeyHolding)
+        {
+            isKeyHolding = true;
+        }
+        if (_event->is<ReleasedKey>() && isKeyHolding)
+        {
+            isKeyHolding = false;
+        }
+        if (_event->is<PressedMouseButton>() && !isButtonHolding)
+        {
+            isButtonHolding = true;
+        }
+        if (_event->is<ReleasedMouseButton>() && isButtonHolding)
+        {
+            isButtonHolding = false;
+        }
+    }
 }

@@ -53,6 +53,7 @@
 #define WEIGHT equipableData.weight
 #define REACH equipableData.weight
 #define RARITY itemData.rarity
+#define TYPE_ID(_element) typeid(_element)
 
 using namespace std;
 using namespace sf;
