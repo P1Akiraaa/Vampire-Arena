@@ -14,9 +14,9 @@ int main()
 {
 	InitConfig();
 
-	Level* _level = new Level("LevelDemo");
+	Level* _level = new Level("VampireArena");
 	_level->SpawnActor<MeshActor>(RectangleShapeData({ 50.f, 50.f }, "Wall", JPG));
-	_level->SpawnActor<ParticleActor>(1000, 3.0f);
+	//_level->SpawnActor<ParticleActor>(1000, 3.0f);
 	M_LEVEL.SetLevel(_level);
 	
 	Engine::GetInstance().Start();

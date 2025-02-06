@@ -4,7 +4,7 @@
 Level::Level(const string& _name)
 {
 	isLoaded = false;
-	window.create(VideoMode({ 1200, 600 }), _name);
+	window.create(VideoMode({ 1920, 1080 }), _name);
 	window.setVisible(false);
 	name = _name;
 	actorManager = ActorManager();
@@ -14,7 +14,6 @@ Level::Level(const string& _name)
 
 	M_LEVEL.RegisterLevel(_name, this);
 }
-
 
 void Level::Update(const float _deltaTime)
 {

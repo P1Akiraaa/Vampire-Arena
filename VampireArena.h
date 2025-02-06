@@ -1,19 +1,11 @@
 #pragma once
-#include "Game.h"
 
-class VampireArena : public Game
+class VampireArena
 {
 public:
 	VampireArena();
-	~VampireArena();
 
 public:
 	virtual void Start();
 	virtual bool Update();
-	void UpdateWindow();
-	virtual void Stop();
-
-private:
-	void InitBackground();
-	void InitMenu();
 };
