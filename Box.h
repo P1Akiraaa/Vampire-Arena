@@ -12,7 +12,7 @@ struct BoxData
 
 	BoxData()
 	{
-		spaceBetween = 0;
+		spaceBetween = 0.0f;
 		size = { 0.0f, 0.0f };
 	}
 
