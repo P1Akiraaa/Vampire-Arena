@@ -175,6 +175,9 @@
     <Filter Include="Scripts\Resource Files\Layer">
       <UniqueIdentifier>{21c3a41c-127b-43d0-9f27-afac3ed99a3a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scripts\Core\Actors\GameMode">
+      <UniqueIdentifier>{f2b838f9-d078-4d34-92ce-2e8755689a77}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TextObject.cpp">
@@ -350,6 +353,9 @@
     </ClCompile>
     <ClCompile Include="CollisionManager.cpp">
       <Filter>Scripts\Managers\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMode.cpp">
+      <Filter>Scripts\Core\Actors\GameMode</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -553,6 +559,9 @@
     </ClInclude>
     <ClInclude Include="CollisionManager.h">
       <Filter>Scripts\Managers\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMode.h">
+      <Filter>Scripts\Core\Actors\GameMode</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
