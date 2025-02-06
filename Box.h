@@ -16,7 +16,7 @@ struct BoxData
 		size = { 0.0f, 0.0f };
 	}
 
-	BoxData(const float _spaceBetween, const Vector2f& _size)
+	BoxData(const Vector2f& _size, const float _spaceBetween = 20.0f)
 	{
 		spaceBetween = _spaceBetween;
 		size = _size;
@@ -68,35 +68,6 @@ public:
 	FORCEINLINE virtual Vector2f GetSize() const override
 	{
 		return data.size;
-	}
-	
-#pragma endregion
-
-#pragma region Setters
-	FORCEINLINE virtual void SetPosition(const Vector2f& _startPosition) override
-	{
-		Super::SetPosition(_startPosition);
-	}
-	FORCEINLINE virtual void SetScale(const Vector2f& _size) override
-	{
-		Super::SetScale(_size);
-	}
-	FORCEINLINE virtual void SetRotation(const Angle& _rotation) override
-	{
-		Super::SetRotation(_rotation);
-	}
-
-	FORCEINLINE virtual void Move(const Vector2f& _offset) override
-	{
-		Super::Move(_offset);
-	}
-	FORCEINLINE virtual void Scale(const Vector2f& _factor) override
-	{
-		Super::Scale(_factor);
-	}
-	FORCEINLINE virtual void Rotate(const Angle& _angle) override
-	{
-		Super::Rotate(_angle);
 	}
 #pragma endregion
 

@@ -5,6 +5,7 @@ class VerticalBox : public Box
 {
 
 public:
+	VerticalBox() = default;
 	VerticalBox(const BoxData& _data);
 
 public:
