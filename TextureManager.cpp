@@ -67,7 +67,10 @@ void TextureManager::Load(ShapeObject* _shapeObject, const string& _path, const 
 
 	// Apply Texture
 	SetTexture(_shapeObject->GetDrawable(), &_texture);
-	SetTextureRect(_shapeObject->GetDrawable(), _rect);
+	if (_rect.size.x != 0 && _rect.size.y != 0)
+	{
+		SetTextureRect(_shapeObject->GetDrawable(), _rect);
+	}
 }
 
 void TextureManager::Load(ShapeObject* _shapeObject, const string& _path, const IntRect& _trim,

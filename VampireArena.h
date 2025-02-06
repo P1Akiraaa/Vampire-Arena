@@ -14,7 +14,6 @@ public:
 	virtual void Stop();
 
 private:
-	void InitButton();
 	void InitBackground();
-	void InitWidget();
+	void InitMenu();
 };
